@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_contoso_salesorder" />
+  <EntityRelationship Name="lk_contoso_salesorder_createdby" />
+  <EntityRelationship Name="lk_contoso_salesorder_modifiedby" />
+  <EntityRelationship Name="owner_contoso_salesorder" />
+  <EntityRelationship Name="team_contoso_salesorder" />
+  <EntityRelationship Name="TransactionCurrency_contoso_SalesOrder" />
+  <EntityRelationship Name="user_contoso_salesorder" />
+</EntityRelationships>
