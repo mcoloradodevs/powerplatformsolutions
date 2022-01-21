@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f5a9b7f5-9a21-45ae-8469-46f9b68d4c91}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="contoso_item" select="1" icon="1" preview="1">
+        <row name="result" id="contoso_salesorderid">
+          <cell name="contoso_orderdate" width="100" />
+          <cell name="contoso_item" width="95" />
+          <cell name="contoso_region" width="100" />
+          <cell name="contoso_rep" width="100" />
+          <cell name="contoso_units" width="100" />
+          <cell name="contoso_unitcost" width="100" />
+          <cell name="contoso_total" width="100" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="contoso_salesorder">
+          <attribute name="contoso_salesorderid" />
+          <attribute name="contoso_item" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="contoso_orderdate" />
+          <attribute name="contoso_region" />
+          <attribute name="contoso_rep" />
+          <attribute name="contoso_units" />
+          <attribute name="contoso_unitcost" />
+          <attribute name="contoso_total" />
+          <order attribute="contoso_orderdate" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Sales Orders" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

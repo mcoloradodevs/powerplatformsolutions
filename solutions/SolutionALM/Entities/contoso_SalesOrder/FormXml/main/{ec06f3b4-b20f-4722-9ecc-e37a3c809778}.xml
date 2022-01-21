@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ec06f3b4-b20f-4722-9ecc-e37a3c809778}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{217485d2-aa6f-4a0c-b491-5e29e5b022a5}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e18c699b-0500-43b1-ba7e-2882d86cd3e9}" columns="11">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c977e706-c031-4db5-b355-ffd8f5789241}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="OrderDate" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_orderdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="contoso_orderdate" disabled="false" />
+                      </cell>
+                      <cell id="{0da7ac03-16fe-414c-b5b5-1ded86cc00d2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Units" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_units" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="contoso_units" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{95e5ce0c-b598-4c06-9753-d4d4b3b45996}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Region" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_region" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="contoso_region" disabled="false" />
+                      </cell>
+                      <cell id="{6bd78234-2492-4d67-9322-df803336b48b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Unit Cost" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_unitcost" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="contoso_unitcost" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e559712-ed16-4bcd-b677-99e765b62317}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Rep" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_rep" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="contoso_rep" disabled="false" />
+                      </cell>
+                      <cell id="{b8dea0c1-b027-4fe1-8478-eaeb648d6062}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_total" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="contoso_total" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6a98fa68-7b09-4e54-b48a-c5a52d5c37c3}">
+                        <labels>
+                          <label description="Item" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_item" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="contoso_item" />
+                      </cell>
+                      <cell locklevel="0" id="{8aa9d9a4-0b28-4324-a100-c0180687c143}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{63fc6a57-aa76-4d88-80db-eb01658cb8d0}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{d5f39cbe-912a-4237-9ecc-5be6473be766}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{8b9af9cc-03c2-4fe3-81f8-0ba9b6ae42eb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{dee22e61-e03c-4db5-982f-241dd046e11d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e22402fd-59e0-45bc-99a4-6967512573e7}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{212ed073-e81a-46a6-afb2-351066a38255}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2e7bc217-7cf8-4446-ab7d-7141fb40f9e1}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Order Assigned To" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{c84f4b6c-40c0-4319-9eb8-7abac36dd005}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{62e3c3c4-07c0-4acd-b823-88d7770be1d2}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d7306bb3-99d5-41ec-9212-ef91b31f39ce}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0115b8f0-2aab-49eb-8ac1-a9ea08a73782}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
