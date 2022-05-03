@@ -90,6 +90,7 @@
       <RootComponent type="9" schemaName="dae_segmento" behavior="0" />
       <RootComponent type="9" schemaName="dae_tipoconversemos" behavior="0" />
       <RootComponent type="9" schemaName="dae_tiposesion" behavior="0" />
+      <RootComponent type="29" id="{03325a97-25cb-ec11-a7b5-6045bd00d194}" behavior="0" />
       <RootComponent type="300" schemaName="dae_eknowarquitecturaformulario_d5a92" behavior="0" />
     </RootComponents>
     <MissingDependencies />
