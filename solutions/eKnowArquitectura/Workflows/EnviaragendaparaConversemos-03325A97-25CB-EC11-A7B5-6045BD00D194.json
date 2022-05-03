@@ -1,0 +1,258 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "dae_sharedcommondataserviceforapps_77b93"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "dae_sharedoffice365_8eebf"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "startTime": "2022-05-05T15:00:00Z",
+            "schedule": {
+              "weekDays": [
+                "Thursday"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "1040dae5-18c9-4097-926e-3ea897ad90ff"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "fecha_conversemos_de_esta_semana": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e2ec1f70-3614-468b-a5e3-ff25689e6524"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "fecha_conversemos_de_esta_semana",
+                "type": "boolean",
+                "value": "@formatDateTime( addDays(utcNow(), 1), 'MM/dd/yyyy')"
+              }
+            ]
+          }
+        },
+        "Listar_sesiones_de_Conversemos": {
+          "runAfter": {
+            "agenda_conversemos": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ba766c88-21d0-4ed2-8a5c-c79d4bd3b467"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "dae_conversemoses",
+              "$filter": "dae_fecha ge @{variables('fecha_conversemos_de_esta_semana')}",
+              "$orderby": "dae_fecha asc",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Para_todas_las_sesiones_de_Conversemos": {
+          "foreach": "@outputs('Listar_sesiones_de_Conversemos')?['body/value']",
+          "actions": {
+            "Buscar_Conversemos_de_esta_semana": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "89df801e-c1c8-40e4-9601-1b485587b250"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "dae_conversemoses",
+                  "recordId": "@items('Para_todas_las_sesiones_de_Conversemos')?['dae_conversemosid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Set_variable": {
+              "runAfter": {
+                "Buscar_Conversemos_de_esta_semana": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1eaf7b96-ca4c-442e-a037-c9563fd02174"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "id_conversemos_de_esta_semana",
+                "value": "@outputs('Buscar_Conversemos_de_esta_semana')?['body/dae_conversemosid']"
+              }
+            }
+          },
+          "runAfter": {
+            "Listar_sesiones_de_Conversemos": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "eac63f3b-2389-4724-8433-6cc696996df4"
+          },
+          "type": "Foreach"
+        },
+        "id_conversemos_de_esta_semana": {
+          "runAfter": {
+            "fecha_conversemos_de_esta_semana": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d2b9973f-7323-46c5-ba6e-906852f862a0"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "id_conversemos_de_esta_semana",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Listar_iniciativas_agendadas_para_el_Conversemos": {
+          "runAfter": {
+            "Para_todas_las_sesiones_de_Conversemos": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ab87440f-3278-4618-8739-2f85ba0a8216"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "dae_iniciativas",
+              "$filter": "_dae_fechaconversemos_value eq @{variables('id_conversemos_de_esta_semana')} and dae_estado eq true"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "agenda_conversemos": {
+          "runAfter": {
+            "id_conversemos_de_esta_semana": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "dc65fbf1-a662-4e3d-b42f-257afbf23943"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "agenda_conversemos",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Para_cada_iniciativa_agendada": {
+          "foreach": "@outputs('Listar_iniciativas_agendadas_para_el_Conversemos')?['body/value']",
+          "actions": {
+            "Crear_Agenda": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "24e682b3-0c51-4337-b4d9-de2d47b8d0fa"
+              },
+              "type": "AppendToStringVariable",
+              "inputs": {
+                "name": "agenda_conversemos",
+                "value": "- Nombre de la iniciativa: @{items('Para_cada_iniciativa_agendada')?['dae_name']}\n- Duración: @{items('Para_cada_iniciativa_agendada')?['dae_duracion']} minutos\n- Objetivo: @{items('Para_cada_iniciativa_agendada')?['dae_objetivopresentacion']}\n"
+              }
+            }
+          },
+          "runAfter": {
+            "Listar_iniciativas_agendadas_para_el_Conversemos": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8238b9de-a93c-44da-85d3-248bc2774ea4"
+          },
+          "type": "Foreach"
+        },
+        "Send_an_email_(V2)": {
+          "runAfter": {
+            "Para_cada_iniciativa_agendada": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c72ff8f2-927a-4c2f-95e1-ac9f42c6631c"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "admin@contosocol.com",
+              "emailMessage/Subject": "Agenda Conversemos del @{variables('fecha_conversemos_de_esta_semana')}",
+              "emailMessage/Body": "<p>@{variables('agenda_conversemos')}</p>"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}
