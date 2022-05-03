@@ -4,7 +4,10 @@ name: release-solution-to-prod
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
     inputs:
       # Change this value
       solution_name:
@@ -106,7 +109,7 @@ jobs:
       with:
         environment-url: ${{env.PRODUCTION_ENVIRONMENT_URL}}
         app-id: ${{env.APP_ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ github.event.inputs.solution_release_folder}}/${{ github.event.inputs.solution_name }}.zip
         force-overwrite: true
