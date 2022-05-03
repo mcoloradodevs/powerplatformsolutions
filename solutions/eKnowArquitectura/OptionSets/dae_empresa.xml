@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dae_empresa" localizedName="Empresa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Empresa" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="774320000" ExternalValue="">
+      <labels>
+        <label description="Hocol" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320001" ExternalValue="">
+      <labels>
+        <label description="Ecopetrol S.A." languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320002" ExternalValue="">
+      <labels>
+        <label description="Cenit" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320003" ExternalValue="">
+      <labels>
+        <label description="Esenttia" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320004" ExternalValue="">
+      <labels>
+        <label description="Ecopetrol America" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320005" ExternalValue="">
+      <labels>
+        <label description="Ecopetrol Brasil" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320006">
+      <labels>
+        <label description="ISA" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320007">
+      <labels>
+        <label description="OCENSA" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320008">
+      <labels>
+        <label description="ODL" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

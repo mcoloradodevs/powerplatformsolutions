@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dae_segmento" localizedName="Segmento" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Segmento" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="774320000" ExternalValue="">
+      <labels>
+        <label description="Upstream" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320001" ExternalValue="">
+      <labels>
+        <label description="Downstream" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320002" ExternalValue="">
+      <labels>
+        <label description="Midstream" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320003" ExternalValue="">
+      <labels>
+        <label description="Comercial" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320004" ExternalValue="">
+      <labels>
+        <label description="Gas" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320005" ExternalValue="">
+      <labels>
+        <label description="Energía" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320006" ExternalValue="">
+      <labels>
+        <label description="Corporativo" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320007" ExternalValue="">
+      <labels>
+        <label description="Apoyo" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="774320008" ExternalValue="">
+      <labels>
+        <label description="Otro" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>
