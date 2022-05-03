@@ -10,7 +10,7 @@ on:
       solution_name:
         description: 'name of the solution to worked on from Power Platform'
         required: true
-        default: SolutionALM
+        default: eKnowArquitectura
        #Do Not change these values
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'
@@ -33,10 +33,10 @@ on:
 
 env:
 #edit your values here
-  BUILD_ENVIRONMENT_URL: https://org6848f2a5.crm2.dynamics.com
-  PRODUCTION_ENVIRONMENT_URL: https://org175d41b4.crm.dynamics.com
-  APP_ID: 8572fa13-413e-4e63-a7b2-86a842902dfa
-  TENANT_ID: 1a506c5a-3e67-44f7-8ada-abd14ca68a14
+  BUILD_ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
+  PRODUCTION_ENVIRONMENT_URL: https://org204ad4c8.crm.dynamics.com/
+  APP_ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
+  TENANT_ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
 
 jobs:
   convert-to-managed:
@@ -61,7 +61,7 @@ jobs:
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.APP_ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
         force-overwrite: true
@@ -72,7 +72,7 @@ jobs:
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.APP_ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         managed: true
