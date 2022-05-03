@@ -23,6 +23,10 @@ on:
        description: 'folder name to be created and checked in *do not change*'
        required: true
        default: solutions/
+      environment_url:
+        description: 'URL of the environment where the original solution is located'
+        required: true
+        default: https://org6848f2a5.crm2.dynamics.com
 
 env:
 #edit your values here
