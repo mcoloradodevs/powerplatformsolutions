@@ -4,39 +4,16 @@ name: release-solution-to-prod
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 
 on:
-  workflow_dispatch:
-    inputs:
-      # Change this value
-      solution_name:
-        description: 'name of the solution to worked on from Power Platform'
-        required: true
-        default: SolutionALM
-       #Do Not change these values
-      solution_shipping_folder:
-        description: 'folder name for staging the exported solution *do not change*'
-        required: true
-        default: out/ship/
-      solution_outbound_folder:
-        description: 'staging the unpacked solution folder before check-in *do not change*'
-        required: true
-        default: out/solutions/
-      solution_source_folder:
-       description: 'folder name to be created and checked in *do not change*'
-       required: true
-       default: solutions/
-      solution_release_folder:
-       description: 'folder where the released binaries are going to be hosted *do not change*'
-       required: true
-       default: out/release
-  release:
-    types: [created]
+  push:
+    branches: [ main ]
 
 env:
 #edit your values here
-  BUILD_ENVIRONMENT_URL: https://org6848f2a5.crm2.dynamics.com
-  PRODUCTION_ENVIRONMENT_URL: https://org175d41b4.crm.dynamics.com
-  APP_ID: 8572fa13-413e-4e63-a7b2-86a842902dfa
-  TENANT_ID: 1a506c5a-3e67-44f7-8ada-abd14ca68a14
+  BUILD_ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
+  PRODUCTION_ENVIRONMENT_URL: https://org204ad4c8.crm.dynamics.com/
+  APP_ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
+  TENANT_ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
+  SOLUTION_NAME: eKnowArquitectura
 
 jobs:
   convert-to-managed:
@@ -49,42 +26,24 @@ jobs:
       with:
         lfs: true
 
-    - name: Pack solution
-      uses: microsoft/powerplatform-actions/pack-solution@0.4.0
-      with:
-        solution-folder: ${{ github.event.inputs.solution_source_folder}}/${{ github.event.inputs.solution_name }}
-        solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
-        solution-type: Unmanaged
-
-    - name: Import solution as unmanaged to build env
-      uses: microsoft/powerplatform-actions/import-solution@v0
-      with:
-        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{env.APP_ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
-        tenant-id: ${{env.TENANT_ID}}
-        solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
-        force-overwrite: true
-        publish-changes: true
-
     - name: Export solution as managed
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.APP_ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-name: ${{ github.event.inputs.solution_name }}
+        solution-name: ${{ env.SOLUTION_NAME }}
         managed: true
-        solution-output-file: ${{ github.event.inputs.solution_shipping_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-output-file: out/ship/${{ env.SOLUTION_NAME }}.zip
 
     - name: Upload the ready to ship solution to GH artifact store
       uses: actions/upload-artifact@v2
       with:
         name: managedSolutions
-        path: ${{ github.event.inputs.solution_shipping_folder}}/${{ github.event.inputs.solution_name }}.zip
+        path: out/ship/${{ env.SOLUTION_NAME }}.zip
 
-  release-to-staging:
+  release-to-production:
     needs: [ convert-to-managed ]
     runs-on: windows-latest
     env:
@@ -108,6 +67,6 @@ jobs:
         app-id: ${{env.APP_ID}}
         client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-file: ${{ github.event.inputs.solution_release_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-file: out/release/${{ env.SOLUTION_NAME }}.zip
         force-overwrite: true
         publish-changes: true
