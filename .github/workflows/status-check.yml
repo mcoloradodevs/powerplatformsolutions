@@ -1,0 +1,33 @@
+name: status-check
+on:
+  pull_request:
+    branches: [ main ]
+
+env:
+#edit values for dev and prod environments
+  BUILD_ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
+  PROD_ENVIRONMENT_URL: https://org204ad4c8.crm.dynamics.com
+  APP_CLIENT_ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
+  TENANT_ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
+
+jobs:
+  status-check:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check connectivity
+      uses: microsoft/powerplatform-actions/who-am-i@v0.6.3
+      with:
+        environment-url: ${{ env.BUILD_ENVIRONMENT_URL }}
+        app-id: ${{ env.APP_CLIENT_ID }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
+        tenant-id: ${{ env.TENANT_ID }}
+    
+    - name: Pack solution
+      uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
+      with:
+        solution-file: out/eKnowArquitectura.zip
+    
