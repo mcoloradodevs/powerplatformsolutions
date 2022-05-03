@@ -51,7 +51,7 @@ jobs:
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT-ID}}
-        client-secret: ${{ secrets.SECRETO_CUENTA_DE_SERVICIO_POWERAPPS }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT-ID}}
 
     - name: export-solution action
@@ -59,7 +59,7 @@ jobs:
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT-ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT-ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
