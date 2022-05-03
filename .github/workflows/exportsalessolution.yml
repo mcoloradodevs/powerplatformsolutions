@@ -30,9 +30,9 @@ on:
 
 env:
 #edit your values here
-  ENVIRONMENT_URL: https://org6848f2a5.crm2.dynamics.com
-  CLIENT-ID: 8572fa13-413e-4e63-a7b2-86a842902dfa
-  TENANT-ID: 1a506c5a-3e67-44f7-8ada-abd14ca68a14
+  ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
+  CLIENT-ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
+  TENANT-ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
 
 
 jobs:
@@ -51,7 +51,7 @@ jobs:
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT-ID}}
-        client-secret: ${{ secrets.POWERPLATFORMALMAPPSECRET }}
+        client-secret: ${{ secrets.SECRETO_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT-ID}}
 
     - name: export-solution action
