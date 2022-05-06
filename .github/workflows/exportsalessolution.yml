@@ -24,13 +24,12 @@ on:
        required: true
        default: solutions/
       environment_url:
-        description: 'URL of the environment where the original solution is located'
+        description: 'URL of the environment where the original unmanaged solution is located'
         required: true
         default: https://org6848f2a5.crm2.dynamics.com
 
 env:
 #edit your values here
-  ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
   CLIENT-ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
   TENANT-ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
 
@@ -49,7 +48,7 @@ jobs:
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
-        environment-url: ${{env.ENVIRONMENT_URL}}
+        environment-url: ${{github.event.inputs.environment_url}}
         app-id: ${{env.CLIENT-ID}}
         client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT-ID}}
@@ -57,7 +56,7 @@ jobs:
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
-        environment-url: ${{env.ENVIRONMENT_URL}}
+        environment-url: ${{github.event.inputs.environment_url}}
         app-id: ${{env.CLIENT-ID}}
         client-secret: ${{ secrets.SECRETO_DE_CUENTA_DE_SERVICIO_POWERAPPS }}
         tenant-id: ${{env.TENANT-ID}}
