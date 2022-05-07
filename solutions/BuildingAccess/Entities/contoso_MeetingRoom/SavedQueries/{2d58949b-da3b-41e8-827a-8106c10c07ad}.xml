@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2d58949b-da3b-41e8-827a-8106c10c07ad}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="contoso_meetingroomname" select="1" icon="1" preview="1">
+        <row name="result" id="contoso_meetingroomid">
+          <cell name="contoso_meetingroomname" width="300" />
+          <cell name="contoso_capacity" width="100" />
+          <cell name="contoso_floor" width="100" />
+          <cell name="contoso_building" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="contoso_meetingroom">
+          <attribute name="contoso_meetingroomid" />
+          <attribute name="contoso_meetingroomname" />
+          <order attribute="contoso_meetingroomname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="contoso_capacity" />
+          <attribute name="contoso_floor" />
+          <attribute name="contoso_building" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Meeting Rooms" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

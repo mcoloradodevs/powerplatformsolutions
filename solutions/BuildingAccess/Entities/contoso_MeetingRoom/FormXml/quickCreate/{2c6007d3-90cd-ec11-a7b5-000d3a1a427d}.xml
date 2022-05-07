@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2c6007d3-90cd-ec11-a7b5-000d3a1a427d}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{07288e54-d2f7-469d-b88d-9991a62a9954}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{838d7ee6-ea66-4108-8bd4-9f19381c18dd}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7f5d7097-0bea-4305-9be2-1b6df5b186e2}" locklevel="0" colspan="1" rowspan="1" labelid="{54d1ef95-249d-4662-a312-14766635a36b}">
+                        <labels>
+                          <label description="Meeting Room Name" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_meetingroomname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="contoso_meetingroomname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2c12c6fc-18b3-474e-a0f4-57df89de87f9}" locklevel="0" colspan="1" rowspan="1" labelid="{dfa747ad-d600-4441-97db-12a72d553441}">
+                        <labels>
+                          <label description="Building" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_building" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="contoso_building" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd235882-66cc-4994-ab8a-c8cfcd69cd00}" locklevel="0" colspan="1" rowspan="1" labelid="{456c6a57-d6f4-4ac5-9440-e2460ac6507f}">
+                        <labels>
+                          <label description="Capacity" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_capacity" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="contoso_capacity" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{39943459-7e0b-484c-bb89-ca7f25f800c4}" locklevel="0" colspan="1" rowspan="1" labelid="{82fd19bb-e514-48f9-a970-3bb56f0ced17}">
+                        <labels>
+                          <label description="Floor" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_floor" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="contoso_floor" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{7e81fd72-415c-46b0-8a42-219f6e64d7b6}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{b59dd7f8-f248-4c56-8f55-e8996df45db6}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{7a54da87-9bbe-4da3-a771-b656e04d134e}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{0ef84e87-3e59-4caf-8439-4422d4577069}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Meeting Room quick create form" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

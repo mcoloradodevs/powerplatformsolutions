@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ff01d3eb-e59e-43c1-8d1e-80df6fcaab56}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{b8d32669-af9d-4817-9c47-4a3499693ba3}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{6307fe18-d747-4fac-9daa-4312c3c07843}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2739da6e-008d-43c0-bf45-245174c05a36}">
+                        <labels>
+                          <label description="Building Name" languagecode="1033" />
+                        </labels>
+                        <control id="contoso_buildingname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="contoso_buildingname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{4639ac40-b908-462b-8086-549f9d8df086}" rowspan="1" colspan="1" auto="false">
+                        <labels>
+                          <label description="Meeting rooms" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>contoso_meetingroom</TargetEntityType>
+                            <ViewId>{2D58949B-DA3B-41E8-827A-8106C10C07AD}</ViewId>
+                            <ViewIds>{2D58949B-DA3B-41E8-827A-8106C10C07AD}</ViewIds>
+                            <RelationshipName>contoso_MeetingRoom_Building_contoso_Buil</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{2eb86fe5-52c7-4411-acd5-fe073965ec93}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3290cf78-5ca4-49f1-be26-699995088589}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{792aecd0-7c6f-400c-a206-0812bb892af6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{67ca3c30-c5a0-405c-bf57-af0e56696c42}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a447c57e-d163-4863-88a5-344b86ee658b}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{fbd47996-b4aa-458a-b095-2e42494139c6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{930d039a-220d-4743-bb71-78f977b689f3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9187782f-53d1-4503-8cd1-d438d87ff8c0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{219f8efa-b21c-48c5-aff3-5f9208b2877e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

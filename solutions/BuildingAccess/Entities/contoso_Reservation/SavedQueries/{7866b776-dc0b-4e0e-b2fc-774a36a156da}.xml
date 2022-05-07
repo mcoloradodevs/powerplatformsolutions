@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{7866b776-dc0b-4e0e-b2fc-774a36a156da}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="contoso_reservationcode" select="1" icon="1" preview="1">
+        <row name="result" id="contoso_reservationid">
+          <cell name="contoso_reservationcode" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="contoso_reservation">
+          <attribute name="contoso_reservationid" />
+          <attribute name="contoso_reservationcode" />
+          <attribute name="createdon" />
+          <order attribute="contoso_reservationcode" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Reservations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

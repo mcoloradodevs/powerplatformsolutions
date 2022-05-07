@@ -1,0 +1,180 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "contoso_sharedcommondataserviceforapps_df2a1"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "contoso_sharedoffice365_19aaa"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "8f8d8694-8650-46a2-a462-e1977cd012dd"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 5,
+              "subscriptionRequest/entityname": "contoso_reservation",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Check_if_reservation_was_created_or_cancelled": {
+          "actions": {},
+          "runAfter": {},
+          "else": {
+            "actions": {
+              "Get_meeting_room": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "7e0d5321-b969-4a1d-bbe8-19f7eefc50a3"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "GetItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "contoso_meetingrooms",
+                    "recordId": "@triggerOutputs()?['body/_contoso_meetingroom_value']"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Create_event_(V4)": {
+                "runAfter": {
+                  "Format_End_Date": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "08788b1f-8b6b-4ac8-8647-1e325ab88081"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_office365",
+                    "operationId": "V4CalendarPostItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                  },
+                  "parameters": {
+                    "table": "AAMkADBjY2I2NTkzLTdiYmEtNGE0Ni04OWQ3LWQyYjljNjZhOWI0MgBGAAAAAACC9WDb45IGSooNvOI7eUTpBwCMq_0sg-ZFRZLZLMNzCN71AAAAAAEGAACMq_0sg-ZFRZLZLMNzCN71AAAAAKSqAAA=",
+                    "item/subject": "You've got a reservation for the @{outputs('Get_meeting_room')?['body/contoso_meetingroomname']}",
+                    "item/start": "@outputs('Format_Start_Date')",
+                    "item/end": "@outputs('Format_End_Date')",
+                    "item/timeZone": "(UTC-05:00) Bogota, Lima, Quito, Rio Branco",
+                    "item/requiredAttendees": "@outputs('Get_profile_of_reservation_author')?['body/internalemailaddress']",
+                    "item/body": "<p>Hi @{outputs('Get_profile_of_reservation_author')?['body/firstname']},<br>\n<br>\nYour reservation code is @{triggerOutputs()?['body/contoso_reservationcode']}<br>\nPlease make sure to cancel your reservation if you will not be using it following this link: <a href=\"https://apps.powerapps.com/play/05d17aed-53d8-4e16-9789-69bceba94dab?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a&amp;source=portal\">Cancel a reservation</a> <br>\n<br>\nBests,<br>\nFacilities Team</p>",
+                    "item/location": "@outputs('Get_meeting_room')?['body/contoso_meetingroomname']",
+                    "item/importance": "high",
+                    "item/reminderMinutesBeforeStart": 15,
+                    "item/isReminderOn": true,
+                    "item/showAs": "busy",
+                    "item/responseRequested": false
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Get_profile_of_reservation_author": {
+                "runAfter": {
+                  "Get_meeting_room": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "c46a3240-41f6-4ad1-b59f-13091bb38dd0"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "GetItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "systemusers",
+                    "recordId": "@outputs('Get_meeting_room')?['body/_createdby_value']"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Format_Start_Date": {
+                "runAfter": {
+                  "Get_profile_of_reservation_author": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "0037ec13-eb39-4855-8f23-c30469c76d8b"
+                },
+                "type": "Compose",
+                "inputs": "@formatDateTime(triggerOutputs()?['body/contoso_startdate'])"
+              },
+              "Format_End_Date": {
+                "runAfter": {
+                  "Format_Start_Date": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "568190e9-4563-46eb-aeeb-dc168d94e9c1"
+                },
+                "type": "Compose",
+                "inputs": "@formatDateTime(triggerOutputs()?['body/contoso_enddate'])"
+              }
+            }
+          },
+          "expression": {
+            "contains": [
+              "@triggerOutputs()?['body']",
+              "\"SdkMessage\": \"Delete\""
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "496603d5-e48f-4fb7-808d-ae6b7331dc3a"
+          },
+          "type": "If"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

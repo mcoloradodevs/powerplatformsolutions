@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_contoso_building" />
+  <EntityRelationship Name="business_unit_contoso_meetingroom" />
+  <EntityRelationship Name="business_unit_contoso_reservation" />
+  <EntityRelationship Name="contoso_MeetingRoom_Building_contoso_Buil" />
+  <EntityRelationship Name="contoso_Reservation_MeetingRoom_contoso_M" />
+  <EntityRelationship Name="lk_contoso_building_createdby" />
+  <EntityRelationship Name="lk_contoso_building_modifiedby" />
+  <EntityRelationship Name="lk_contoso_meetingroom_createdby" />
+  <EntityRelationship Name="lk_contoso_meetingroom_modifiedby" />
+  <EntityRelationship Name="lk_contoso_reservation_createdby" />
+  <EntityRelationship Name="lk_contoso_reservation_modifiedby" />
+  <EntityRelationship Name="owner_contoso_building" />
+  <EntityRelationship Name="owner_contoso_meetingroom" />
+  <EntityRelationship Name="owner_contoso_reservation" />
+  <EntityRelationship Name="team_contoso_building" />
+  <EntityRelationship Name="team_contoso_meetingroom" />
+  <EntityRelationship Name="team_contoso_reservation" />
+  <EntityRelationship Name="user_contoso_building" />
+  <EntityRelationship Name="user_contoso_meetingroom" />
+  <EntityRelationship Name="user_contoso_reservation" />
+</EntityRelationships>

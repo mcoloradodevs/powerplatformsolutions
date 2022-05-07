@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c52b8580-0913-4d94-90c6-19dce0c5ab37}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="contoso_reservationcode" select="1" icon="1" preview="1">
+        <row name="result" id="contoso_reservationid">
+          <cell name="contoso_reservationcode" width="169" />
+          <cell name="contoso_meetingroom" width="100" />
+          <cell name="contoso_startdate" width="100" />
+          <cell name="contoso_enddate" width="100" />
+          <cell name="contoso_duration" width="100" />
+          <cell name="createdon" width="125" />
+          <cell name="createdby" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="contoso_reservation">
+          <attribute name="contoso_reservationid" />
+          <attribute name="contoso_reservationcode" />
+          <attribute name="createdon" />
+          <order attribute="contoso_reservationcode" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="contoso_startdate" />
+          <attribute name="contoso_enddate" />
+          <attribute name="contoso_duration" />
+          <attribute name="createdby" />
+          <attribute name="contoso_meetingroom" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Reservations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
