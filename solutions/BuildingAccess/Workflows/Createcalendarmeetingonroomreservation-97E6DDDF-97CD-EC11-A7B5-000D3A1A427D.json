@@ -31,6 +31,14 @@
         "$authentication": {
           "defaultValue": {},
           "type": "SecureObject"
+        },
+        "App URL (contoso_AppURL)": {
+          "defaultValue": "https://apps.powerapps.com/play/05d17aed-53d8-4e16-9789-69bceba94dab?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a&source=portal",
+          "type": "String",
+          "metadata": {
+            "schemaName": "contoso_AppURL",
+            "description": "Meeting Room Reservation App URL"
+          }
         }
       },
       "triggers": {
@@ -102,7 +110,7 @@
                     "item/end": "@outputs('Format_End_Date')",
                     "item/timeZone": "(UTC-05:00) Bogota, Lima, Quito, Rio Branco",
                     "item/requiredAttendees": "@outputs('Get_profile_of_reservation_author')?['body/internalemailaddress']",
-                    "item/body": "<p>Hi @{outputs('Get_profile_of_reservation_author')?['body/firstname']},<br>\n<br>\nYour reservation code is @{triggerOutputs()?['body/contoso_reservationcode']}<br>\nPlease make sure to cancel your reservation if you will not be using it following this link: <a href=\"https://apps.powerapps.com/play/05d17aed-53d8-4e16-9789-69bceba94dab?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a&amp;source=portal\">Cancel a reservation</a> <br>\n<br>\nBests,<br>\nFacilities Team</p>",
+                    "item/body": "<p>Hi @{outputs('Get_profile_of_reservation_author')?['body/firstname']},<br>\n<br>\nYour reservation code is @{triggerOutputs()?['body/contoso_reservationcode']}<br>\nPlease make sure to cancel your reservation if you will not be using it following this link: <a href=\"@{parameters('App URL (contoso_AppURL)')}\">Cancel a reservation</a><br>\n<br>\nBests,<br>\nFacilities Team</p>",
                     "item/location": "@outputs('Get_meeting_room')?['body/contoso_meetingroomname']",
                     "item/importance": "high",
                     "item/reminderMinutesBeforeStart": 15,

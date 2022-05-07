@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="contoso_AppURL">
+  <defaultvalue>https://apps.powerapps.com/play/05d17aed-53d8-4e16-9789-69bceba94dab?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a&amp;source=portal</defaultvalue>
+  <description default="Meeting Room Reservation App URL">
+    <label description="Meeting Room Reservation App URL" languagecode="1033" />
+  </description>
+  <displayname default="App URL">
+    <label description="App URL" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>
