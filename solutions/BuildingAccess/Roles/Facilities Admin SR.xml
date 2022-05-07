@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{adbd688c-73cd-ec11-a7b5-000d3a1a427d}" name="Facilities Admin SR" isinherited="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendcontoso_Building" level="Global" />
+    <RolePrivilege name="prvAppendcontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvAppendcontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvAppendTocontoso_Building" level="Global" />
+    <RolePrivilege name="prvAppendTocontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvAppendTocontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvAssigncontoso_Building" level="Global" />
+    <RolePrivilege name="prvAssigncontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvAssigncontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvCreatecontoso_Building" level="Global" />
+    <RolePrivilege name="prvCreatecontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvCreatecontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeletecontoso_Building" level="Global" />
+    <RolePrivilege name="prvDeletecontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvDeletecontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvReadcontoso_Building" level="Global" />
+    <RolePrivilege name="prvReadcontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvReadcontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvSharecontoso_Building" level="Global" />
+    <RolePrivilege name="prvSharecontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvSharecontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvWritecontoso_Building" level="Global" />
+    <RolePrivilege name="prvWritecontoso_MeetingRoom" level="Global" />
+    <RolePrivilege name="prvWritecontoso_Reservation" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

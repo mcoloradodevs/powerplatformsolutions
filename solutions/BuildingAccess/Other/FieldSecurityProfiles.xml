@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldSecurityProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FieldSecurityProfile name="Meeting Room Requestor CR" fieldsecurityprofileid="{3b4a6654-74cd-ec11-a7b5-000d3a1a427d}">
+    <FieldPermissions />
+  </FieldSecurityProfile>
+</FieldSecurityProfiles>
