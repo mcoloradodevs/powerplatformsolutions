@@ -9,11 +9,11 @@ on:
 
 env:
 #edit your values here
-  BUILD_ENVIRONMENT_URL: https://orga0143a4d.crm.dynamics.com
+  BUILD_ENVIRONMENT_URL: https://orgfe270ee0.crm.dynamics.com
   PRODUCTION_ENVIRONMENT_URL: https://org204ad4c8.crm.dynamics.com/
   APP_ID: b5f789c3-3066-473e-b03e-b8e22f4ba987
   TENANT_ID: 54a8e544-1927-4edb-8e84-4225ed8e739a
-  SOLUTION_NAME: eKnowArquitectura
+  SOLUTION_NAME: BuildingAccess
 
 jobs:
   convert-to-managed:
