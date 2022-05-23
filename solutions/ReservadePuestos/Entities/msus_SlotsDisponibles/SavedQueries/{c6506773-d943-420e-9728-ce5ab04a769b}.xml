@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c6506773-d943-420e-9728-ce5ab04a769b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msus_slotid" select="1" icon="1" preview="1">
+        <row name="result" id="msus_slotsdisponiblesid">
+          <cell name="msus_slotid" width="82" />
+          <cell name="msus_seccion" width="100" />
+          <cell name="msus_horainicio" width="100" />
+          <cell name="msus_horafin" width="100" />
+          <cell name="msus_reserva" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msus_slotsdisponibles">
+          <attribute name="msus_slotsdisponiblesid" />
+          <attribute name="msus_slotid" />
+          <order attribute="msus_slotid" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="msus_seccion" />
+          <attribute name="msus_horainicio" />
+          <attribute name="msus_horafin" />
+          <attribute name="msus_reserva" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Slots Disponibles" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

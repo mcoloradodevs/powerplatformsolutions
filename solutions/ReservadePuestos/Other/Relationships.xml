@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_msus_reserva" />
+  <EntityRelationship Name="business_unit_msus_seccion" />
+  <EntityRelationship Name="business_unit_msus_slotsdisponibles" />
+  <EntityRelationship Name="lk_msus_reserva_createdby" />
+  <EntityRelationship Name="lk_msus_reserva_modifiedby" />
+  <EntityRelationship Name="lk_msus_seccion_createdby" />
+  <EntityRelationship Name="lk_msus_seccion_modifiedby" />
+  <EntityRelationship Name="lk_msus_slotsdisponibles_createdby" />
+  <EntityRelationship Name="lk_msus_slotsdisponibles_modifiedby" />
+  <EntityRelationship Name="msus_Reserva_Seccionreservada_msus_Seccio" />
+  <EntityRelationship Name="msus_SlotsDisponibles_Reserva_msus_Reserv" />
+  <EntityRelationship Name="msus_SlotsDisponibles_Seccion_msus_Seccio" />
+  <EntityRelationship Name="owner_msus_reserva" />
+  <EntityRelationship Name="owner_msus_seccion" />
+  <EntityRelationship Name="owner_msus_slotsdisponibles" />
+  <EntityRelationship Name="team_msus_reserva" />
+  <EntityRelationship Name="team_msus_seccion" />
+  <EntityRelationship Name="team_msus_slotsdisponibles" />
+  <EntityRelationship Name="user_msus_reserva" />
+  <EntityRelationship Name="user_msus_seccion" />
+  <EntityRelationship Name="user_msus_slotsdisponibles" />
+</EntityRelationships>

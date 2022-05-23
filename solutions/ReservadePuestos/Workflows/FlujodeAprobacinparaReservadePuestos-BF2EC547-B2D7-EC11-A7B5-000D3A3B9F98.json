@@ -1,0 +1,293 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_approvals_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedapprovals_ccbca"
+        },
+        "api": {
+          "name": "shared_approvals"
+        }
+      },
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedcommondataserviceforapps_85d47"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedoffice365_e4d22"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "a3683f5d-9c94-4aba-be83-1b999f067a5b"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "msus_reserva",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Start_and_wait_for_an_approval": {
+          "runAfter": {
+            "Compose_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5a58b61c-a8d4-42bb-8e03-21b01e6a8971"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_approvals_1",
+              "operationId": "StartAndWaitForAnApproval",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
+            },
+            "parameters": {
+              "approvalType": "Basic",
+              "WebhookApprovalCreationInput/title": "@{outputs('Get_a_row_by_ID')?['body/fullname']} solicita aprobación para reservar puesto en la oficina el día @{outputs('Compose')}",
+              "WebhookApprovalCreationInput/assignedTo": "@{triggerOutputs()?['body/msus_emailaprobador']};",
+              "WebhookApprovalCreationInput/details": "- Fecha de la reserva: @{outputs('Compose')}\n- Lugar reservado: @{outputs('Get_a_row_by_ID_2')?['body/msus_nombreseccion']}\n",
+              "WebhookApprovalCreationInput/enableNotifications": true,
+              "WebhookApprovalCreationInput/enableReassignment": false
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_a_row_by_ID": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "c0cecc2d-ac62-4d72-af3f-0e2ea0918ce9"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@triggerOutputs()?['body/_createdby_value']",
+              "$select": "fullname, internalemailaddress"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Compose": {
+          "runAfter": {
+            "Get_a_row_by_ID_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "874bbab2-3c69-460c-bd18-75e7c08349b3"
+          },
+          "type": "Compose",
+          "inputs": "@formatDateTime(triggerOutputs()?['body/msus_fecha'], 'dd-MM-yyyy')"
+        },
+        "Get_a_row_by_ID_2": {
+          "runAfter": {
+            "Get_a_row_by_ID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1a01d1b5-9b9d-4d05-b0c2-1bfb5570e00f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msus_seccions",
+              "recordId": "@triggerOutputs()?['body/_msus_seccionreservada_value']",
+              "$select": "msus_nombreseccion"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Create_event_(V4)": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "60de3fa7-6692-4e8e-985a-e23e5a5619a1"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365_1",
+                  "operationId": "V4CalendarPostItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "table": "AAMkADBjY2I2NTkzLTdiYmEtNGE0Ni04OWQ3LWQyYjljNjZhOWI0MgBGAAAAAACC9WDb45IGSooNvOI7eUTpBwCMq_0sg-ZFRZLZLMNzCN71AAAAAAEGAACMq_0sg-ZFRZLZLMNzCN71AAAAAKSqAAA=",
+                  "item/subject": "Usted tiene una reserva para asistir a la oficina el día @{outputs('Compose')}",
+                  "item/start": "@outputs('Compose_2')",
+                  "item/end": "@addHours(outputs('Compose_2'), 23)",
+                  "item/timeZone": "(UTC-05:00) Bogota, Lima, Quito, Rio Branco",
+                  "item/requiredAttendees": "@outputs('Get_a_row_by_ID')?['body/internalemailaddress']",
+                  "item/body": "<p>¡Hola @{outputs('Get_a_row_by_ID')?['body/fullname']}!<br>\n<br>\nUsted tiene un puesto reservado el día @{outputs('Compose')} en nuestras oficina. ¡Lo(a) esperamos aquí!<br>\n<br>\n<strong>Sección:</strong> @{outputs('Get_a_row_by_ID_2')?['body/msus_nombreseccion']}<strong><br>\n<br>\n</strong>Por favor recuerde cancelar su reserva si no hará uso de ella, así liberará un espacio a quien lo necesita.<br>\n<br>\n<a href=\"https://apps.powerapps.com/play/df12fef2-860e-4165-8d3b-23436122a84f?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a\">Clic aquí para abrir la App de reservas</a><br>\n<br>\nSaludos,<br>\n<br>\nEquipo de Facilities</p>",
+                  "item/isAllDay": true
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Update_a_row_2": {
+              "runAfter": {
+                "Create_event_(V4)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3b9329ea-7895-4040-9bc3-cd57b20ba50e"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "msus_reservas",
+                  "recordId": "@triggerOutputs()?['body/msus_reservaid']",
+                  "item/msus_estatusaprobacion": 100000001,
+                  "item/msus_idevento": "@outputs('Create_event_(V4)')?['body/id']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Start_and_wait_for_an_approval": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Apply_to_each": {
+                "foreach": "@outputs('Start_and_wait_for_an_approval')?['body/responses']",
+                "actions": {
+                  "Send_an_email_(V2)": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "a2e55d02-e9e5-4e0d-88c9-45b59521c3fc"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_office365_1",
+                        "operationId": "SendEmailV2",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                      },
+                      "parameters": {
+                        "emailMessage/To": "@outputs('Get_a_row_by_ID')?['body/internalemailaddress']",
+                        "emailMessage/Subject": "Su reserva para asistir a la oficina el día @{outputs('Compose')} ha sido rechazada",
+                        "emailMessage/Body": "<p>Hola @{outputs('Get_a_row_by_ID')?['body/fullname']},<br>\n<br>\nLo sentimos, su manager ha decidido cancelar su solicitud de reserva para el día @{outputs('Compose')} en nuestras oficinas.<br>\n<br>\n<strong>Detalle de la reserva:</strong><br>\n</p>\n<ul>\n  <li>Sección: @{outputs('Get_a_row_by_ID_2')?['body/msus_nombreseccion']}</li>\n  <li>Comentarios de rechazo: @{items('Apply_to_each')?['comments']}</li>\n</ul>\n<p>\n<a href=\"https://apps.powerapps.com/play/df12fef2-860e-4165-8d3b-23436122a84f?tenantId=54a8e544-1927-4edb-8e84-4225ed8e739a\">Clic aquí para abrir la App de reservas</a>\n<br>\nCordialmente,<br>\n<br>\nEquipo de Facilities</p>"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "35b60937-65b1-463f-823c-cfda1bb894e9"
+                },
+                "type": "Foreach"
+              },
+              "Update_a_row": {
+                "runAfter": {
+                  "Apply_to_each": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "01aba6a4-ae37-4d0a-9e0b-5d6c4ab9cc3d"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps_1",
+                    "operationId": "UpdateRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "msus_reservas",
+                    "recordId": "@triggerOutputs()?['body/msus_reservaid']",
+                    "item/msus_estatusaprobacion": 100000002
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@outputs('Start_and_wait_for_an_approval')?['body/outcome']",
+              "Approve"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "837da88a-cd87-4a29-8f92-3a7e6d483887"
+          },
+          "type": "If"
+        },
+        "Compose_2": {
+          "runAfter": {
+            "Compose": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a497ddc5-401f-4e1b-8852-7c1bd281781e"
+          },
+          "type": "Compose",
+          "inputs": "@formatDateTime(triggerOutputs()?['body/msus_fecha'])"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}
