@@ -61,7 +61,7 @@
     "txt_capacidad": 51
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "05/23/2022 21:23:28",
+  "HeaderLastSavedDateTimeUTC": "05/23/2022 21:23:29",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "82cf24d0-8259-4763-a5d3-1cce41131a1a": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/c0b08ff673d8429f9a91fdbe932ae613\""
