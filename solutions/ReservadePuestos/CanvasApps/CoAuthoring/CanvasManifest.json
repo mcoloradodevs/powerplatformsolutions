@@ -100,7 +100,6 @@
   "ScreenOrder": [
     "pantalla_principal",
     "pantalla_reserva",
-    "pantalla_cancelar",
-    "pantalla_exito"
+    "pantalla_cancelar"
   ]
 }

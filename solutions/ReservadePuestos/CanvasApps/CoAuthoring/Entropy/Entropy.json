@@ -20,11 +20,8 @@
     "Gallery2": 51,
     "galleryTemplate1": 22,
     "galleryTemplate2": 52,
-    "icon_home": 40,
     "Icon1": 44,
     "Icon1_1": 6,
-    "iconCheck1": 38,
-    "iconCircle1": 37,
     "Image1": 33,
     "Image2": 7,
     "Image2_1": 45,
@@ -40,9 +37,7 @@
     "Label3": 24,
     "Label4": 29,
     "Label7": 58,
-    "LblSuccessMsg1": 39,
     "pantalla_cancelar": 41,
-    "pantalla_exito": 36,
     "pantalla_principal": 32,
     "pantalla_reserva": 3,
     "Rectangle1": 4,
@@ -61,7 +56,7 @@
     "txt_capacidad": 28
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "05/23/2022 21:24:00",
+  "HeaderLastSavedDateTimeUTC": "05/23/2022 21:46:35",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "82cf24d0-8259-4763-a5d3-1cce41131a1a": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/c0b08ff673d8429f9a91fdbe932ae613\""
@@ -98,7 +93,6 @@
   "OrderTemplate": {},
   "OrderXMLTemplate": {
     "button": 8,
-    "circle": 9,
     "datepicker": 5,
     "form": 4,
     "gallery": 7,
@@ -107,7 +101,7 @@
     "label": 1,
     "rectangle": 0,
     "text": 6,
-    "toggleSwitch": 10
+    "toggleSwitch": 9
   },
   "PublishOrderIndices": {
     "App": 0,
@@ -129,11 +123,8 @@
     "Gallery2": 40,
     "galleryTemplate1": 21,
     "galleryTemplate2": 41,
-    "icon_home": 0,
     "Icon1": 33,
     "Icon1_1": 5,
-    "iconCheck1": 0,
-    "iconCircle1": 0,
     "Image1": 0,
     "Image2": 6,
     "Image2_1": 34,
@@ -149,9 +140,7 @@
     "Label3": 23,
     "Label4": 28,
     "Label7": 47,
-    "LblSuccessMsg1": 0,
     "pantalla_cancelar": 0,
-    "pantalla_exito": 0,
     "pantalla_principal": 0,
     "pantalla_reserva": 0,
     "Rectangle1": 3,
