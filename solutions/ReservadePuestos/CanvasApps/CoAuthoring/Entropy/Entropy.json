@@ -1,7 +1,10 @@
 {
   "ComponentIndexes": {},
-  "ControlUniqueIds": {},
+  "ControlUniqueIds": {
+    "App": 1
+  },
   "FunctionParamsInvariantScripts": {},
+  "HeaderLastSavedDateTimeUTC": "05/23/2022 22:43:00",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
@@ -14,7 +17,31 @@
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
   "OrderXMLTemplate": {},
-  "PublishOrderIndices": {},
+  "PublishOrderIndices": {
+    "App": 0
+  },
   "ResourcesJsonIndices": {},
-  "TemplateVersions": {}
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.2775352,
+    "ControlCount": {
+      "button": 4,
+      "circle": 1,
+      "datepicker": 2,
+      "form": 1,
+      "gallery": 2,
+      "galleryTemplate": 2,
+      "icon": 4,
+      "image": 5,
+      "label": 23,
+      "rectangle": 5,
+      "screen": 4,
+      "text": 1,
+      "toggleSwitch": 1,
+      "typedDataCard": 2
+    },
+    "DeserializationLoadTime": 1.0915005,
+    "ErrorCount": 0
+  },
+  "WasLocalDatabaseReferencesEmpty": false
 }
