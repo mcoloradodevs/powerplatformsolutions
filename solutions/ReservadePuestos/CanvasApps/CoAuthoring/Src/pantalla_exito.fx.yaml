@@ -41,3 +41,16 @@
         Y: =iconCheck1.Y + iconCheck1.Height + 100
         ZIndex: =3
 
+    icon_home As icon.Home:
+        BorderColor: =RGBA(131, 24, 75, 1)
+        Color: =var_color
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =40
+        Icon: =Icon.Home
+        OnSelect: =Set( var_color, RGBA( RandBetween(0, 255), RandBetween(0, 255), RandBetween(0, 255), 1 ) )
+        Width: =40
+        X: =20
+        Y: =20
+        ZIndex: =4
+
