@@ -1,6 +1,7 @@
 "pantalla_exito As screen.'phoneLayout_Success_ver3.0'":
     Fill: =RGBA(255,255,255,1)
     LoadingSpinnerColor: =RGBA(211, 66, 9, 1)
+    OnVisible: =Set(var_color, RGBA( RandBetween( 0, 255) , RandBetween( 0, 255), RandBetween( 0, 255), 1 ) )
 
     iconCircle1 As circle.Circle:
         BorderColor: =RGBA(131, 24, 75, 1)
