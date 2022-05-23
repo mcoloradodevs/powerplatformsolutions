@@ -51,4 +51,5 @@
         X: =20
         Y: =20
         ZIndex: =4
+        OnSelect: Navigate(pantalla_principal)
 
