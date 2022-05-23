@@ -1,5 +1,5 @@
 pantalla_principal As screen:
-    Fill: =RGBA(251, 188, 159, 1)
+    Fill: =RGBA(181, 116, 147, 1)
     LoadingSpinnerColor: =RGBA(211, 66, 9, 1)
 
     Button1 As button:
