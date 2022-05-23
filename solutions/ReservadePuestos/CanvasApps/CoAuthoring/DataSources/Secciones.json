@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "msus_seccions",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "msus_seccion",
+    "MaxGetRowsCount": 500,
+    "Name": "Secciones",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "msus_capacidad": "Capacidad",
+      "msus_idseccion": "ID Sección",
+      "msus_nombreseccion": "Nombre sección",
+      "msus_piso": "Piso",
+      "msus_Reserva_Seccionreservada_msus_Seccio": "Reservas",
+      "msus_seccion_AsyncOperations": "System Jobs",
+      "msus_seccion_BulkDeleteFailures": "Bulk Delete Failures",
+      "msus_seccion_DuplicateBaseRecord": "Duplicate Records (msus_seccion_DuplicateBaseRecord)",
+      "msus_seccion_DuplicateMatchingRecord": "Duplicate Records (msus_seccion_DuplicateMatchingRecord)",
+      "msus_seccion_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "msus_seccion_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "msus_seccion_ProcessSession": "Process Sessions",
+      "msus_seccion_SyncErrors": "Sync Errors",
+      "msus_seccionid": "Sección",
+      "msus_SlotsDisponibles_Seccion_msus_Seccio": "Slots Disponibles",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Secciones",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Secciones (Views)",
+    "Name": "_msus_seccion_views",
+    "RelatedEntityName": "Secciones",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1bade569-6f98-46c8-a67d-75e84e3623f8": "Active Secciones",
+      "1d3d39a5-f91c-4fad-aae5-2add3cbe0ef9": "Sección Associated View",
+      "1ffffe86-f3e3-4436-aed1-bce474f4adbd": "Sección Lookup View",
+      "90a2144f-edd2-4a03-a8e4-0e96974d4ad7": "Sección Advanced Find View",
+      "b4c05836-c234-435d-a536-e126c8274c30": "Inactive Secciones"
+    }
+  },
+  {
+    "DisplayName": "Status (Secciones)",
+    "Name": "msus_seccion_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Secciones"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Secciones",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Secciones)",
+    "Name": "msus_seccion_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Secciones"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Secciones",
+    "Type": "OptionSetInfo"
+  }
+]
