@@ -1,6 +1,7 @@
 "pantalla_exito As screen.'phoneLayout_Success_ver3.0'":
     Fill: =RGBA(255,255,255,1)
     LoadingSpinnerColor: =RGBA(211, 66, 9, 1)
+    OnVisible: =Set(var_color, RGBA( RandBetween( 0, 255) , RandBetween( 0, 255), RandBetween( 0, 255), 1 ) )
 
     iconCircle1 As circle.Circle:
         BorderColor: =RGBA(131, 24, 75, 1)
@@ -42,12 +43,12 @@
 
     icon_home As icon.CalendarBlank:
         BorderColor: =RGBA(131, 24, 75, 1)
-        Color: =RGBA(131, 24, 75, 1)
+        Color: =var_color
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(244, 244, 244, 1)
         Height: =40
         Icon: =Icon.Home
-        OnSelect: =Navigate(pantalla_principal)
+        OnSelect: =Set(var_color, RGBA( RandBetween( 0, 255) , RandBetween( 0, 255), RandBetween( 0, 255), 1 ) )
         Width: =40
         X: =20
         Y: =20
