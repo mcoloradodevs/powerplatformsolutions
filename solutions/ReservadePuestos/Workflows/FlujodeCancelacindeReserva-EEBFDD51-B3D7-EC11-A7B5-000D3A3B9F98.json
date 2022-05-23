@@ -1,0 +1,105 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedoffice365_e4d22"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedcommondataserviceforapps_85d47"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "81457640-0c81-48e5-94ad-9c8823f6e764"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "msus_reserva",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "msus_estatusaprobacion eq 100000003"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Delete_event_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "8bf37dd7-13ec-45d2-9f0e-e742913a0172"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365_1",
+              "operationId": "CalendarDeleteItem_V2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "calendar": "AAMkADBjY2I2NTkzLTdiYmEtNGE0Ni04OWQ3LWQyYjljNjZhOWI0MgBGAAAAAACC9WDb45IGSooNvOI7eUTpBwCMq_0sg-ZFRZLZLMNzCN71AAAAAAEGAACMq_0sg-ZFRZLZLMNzCN71AAAAAKSqAAA=",
+              "event": "@triggerOutputs()?['body/msus_idevento']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Delete_a_row": {
+          "runAfter": {
+            "Delete_event_(V2)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8549a9e1-faca-4ab3-96e5-d4d4d6383485"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "DeleteRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msus_reservas",
+              "recordId": "@triggerOutputs()?['body/msus_reservaid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,213 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedcommondataserviceforapps_85d47"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "startTime": "2022-05-24T05:00:00Z",
+            "schedule": {
+              "weekDays": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "e4f87091-0244-490a-8279-11004aa70b38"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Initialize_variable_timestamps": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e8320852-d2a8-4cdc-a0f3-47f6ba0aa219"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "timestamps",
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_timeincrement": {
+          "runAfter": {
+            "Initialize_variable_timestamps": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0b521929-de56-43d9-8dd0-7ead4f9656c0"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "timeincrement",
+                "type": "array",
+                "value": [
+                  0,
+                  30,
+                  60,
+                  90,
+                  120,
+                  150,
+                  180,
+                  210,
+                  240,
+                  270,
+                  300,
+                  330,
+                  360,
+                  420,
+                  450,
+                  480,
+                  510,
+                  540,
+                  570,
+                  600,
+                  630,
+                  660,
+                  690,
+                  720,
+                  750,
+                  780,
+                  810,
+                  840,
+                  870,
+                  900
+                ]
+              }
+            ]
+          }
+        },
+        "Create_timestamps_in_intervals_of_30_mins": {
+          "foreach": "@variables('timeincrement')",
+          "actions": {
+            "Append_to_array_variable": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "68daebe8-8c4b-4272-a9d6-88caada2e901"
+              },
+              "type": "AppendToArrayVariable",
+              "inputs": {
+                "name": "timestamps",
+                "value": "@addToTime( addHours( startOfDay(utcNow()) , 7 ), items('Create_timestamps_in_intervals_of_30_mins'), 'Minute' )"
+              }
+            }
+          },
+          "runAfter": {
+            "Initialize_variable_timeincrement": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "70674c58-713a-4f84-b871-5a47ae020599"
+          },
+          "type": "Foreach"
+        },
+        "List_all_sections": {
+          "runAfter": {
+            "Create_timestamps_in_intervals_of_30_mins": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "52a03c04-91a5-4a79-a554-4e2603efa8f3"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msus_seccions",
+              "$select": "msus_seccionid"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Create_a_set_of_slots_for_each_section": {
+          "foreach": "@outputs('List_all_sections')?['body/value']",
+          "actions": {
+            "Create_a_slot_for_each_timestamp": {
+              "foreach": "@variables('timestamps')",
+              "actions": {
+                "Create_a_slot": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "dd25fe17-e892-405e-aaf9-564651a2ac35"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "msus_slotsdisponibleses",
+                      "item/msus_horafin": "@addMinutes(items('Create_a_slot_for_each_timestamp'), 30)",
+                      "item/msus_horainicio": "@items('Create_a_slot_for_each_timestamp')",
+                      "item/msus_Seccion@odata.bind": "msus_seccions(@{items('Create_a_set_of_slots_for_each_section')?['msus_seccionid']})"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "f14fd8a1-4ef4-4f34-968a-6fdf7b6346a5"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "List_all_sections": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f66a012e-32c0-4a8b-b724-c751e5860a0a"
+          },
+          "type": "Foreach"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

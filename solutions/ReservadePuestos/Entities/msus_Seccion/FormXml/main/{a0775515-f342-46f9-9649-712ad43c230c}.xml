@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a0775515-f342-46f9-9649-712ad43c230c}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{cf08bdac-a0e3-4906-bd09-7a2a1b30f3d7}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{c37a2e46-5d4f-4bc8-bb28-b2537cdfabc9}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9be0b5db-e89f-466f-8ece-9c2e16532741}">
+                        <labels>
+                          <label description="ID Sección" languagecode="1033" />
+                        </labels>
+                        <control id="msus_idseccion" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="msus_idseccion" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f7d0c0ff-d5bc-48c6-8e89-2abadb0e4edc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nombre sección" languagecode="1033" />
+                        </labels>
+                        <control id="msus_nombreseccion" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="msus_nombreseccion" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fbb2d54c-c308-4d45-a4d6-7d14deb4ad36}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Piso" languagecode="1033" />
+                        </labels>
+                        <control id="msus_piso" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="msus_piso" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a6f1bea-6d74-4657-941e-2df881cbcccb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Capacidad" languagecode="1033" />
+                        </labels>
+                        <control id="msus_capacidad" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="msus_capacidad" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{d1e0f739-963e-4b8b-bcfd-76fb5a3a0019}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0fa631b7-56d8-4d67-9c6a-726b3ca222a6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a05a24d1-c79c-4c71-b376-597e0ec8c681}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a754409d-63e3-4800-a1a6-d243a8181848}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4c5cc83b-dfe6-4bda-8d9f-afa3cf26ff08}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{30a83ad4-5015-4901-bacd-e28de962b626}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{e971710f-dd79-453d-b28b-60bdfd5d0451}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7672d719-781a-45e7-b306-ce9023bac19b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d4962a38-1cd3-403a-8475-68b820c1c70b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
