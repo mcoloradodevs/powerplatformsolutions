@@ -40,7 +40,7 @@
     Icon1_4 As icon.Vehicles:
         Height: =80
         Icon: =Icon.Home
-        OnSelect: =Navigate(HomeScreen, ScreenTransition.Fade)
+        OnSelect: =Navigate(HomeScreen, ScreenTransition.Fade); UpdateConext({var_coloricon, RGBA(RandBetween(0,255), RandBetween(0,255), RandBetween(0,255), 1)})
         PaddingBottom: =10
         PaddingLeft: =10
         PaddingRight: =10
