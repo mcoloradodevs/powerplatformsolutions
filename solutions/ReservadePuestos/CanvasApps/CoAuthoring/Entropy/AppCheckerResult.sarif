@@ -3,9 +3,18 @@
   "runs": [
     {
       "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
       "results": [],
       "tool": {
-        "driver": null
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "version": "1.324"
+        }
       }
     }
   ],
