@@ -1,5 +1,7 @@
 "SuccessScreen As screen.'phoneLayout_Success_ver3.0'":
-OnVisible: =UpdateContext({var_coloricon: RGBA(RandBetween(0,255), RandBetween(0,255), RandBetween(0,255), 1)})
+    OnVisible: = UpdateContext({var_coloricon: RGBA(RandBetween(0,255), RandBetween(0,255), RandBetween(0,255), 1)})
+
+
     iconCircle1 As circle.Circle:
         X: =Parent.Width/2 - Self.Width/2
         Y: =(Parent.Height/2 - Self.Height/2) * .7
