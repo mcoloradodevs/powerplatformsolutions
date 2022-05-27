@@ -1,0 +1,122 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "contoso_meetingrooms",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "contoso_meetingroom",
+    "MaxGetRowsCount": 500,
+    "Name": "Meeting Rooms",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "contoso_available": "Available Now",
+      "contoso_Building": "Building",
+      "contoso_capacity": "Capacity",
+      "contoso_floor": "Floor",
+      "contoso_meetingroom_AsyncOperations": "System Jobs",
+      "contoso_meetingroom_BulkDeleteFailures": "Bulk Delete Failures",
+      "contoso_meetingroom_DuplicateBaseRecord": "Duplicate Records (contoso_meetingroom_DuplicateBaseRecord)",
+      "contoso_meetingroom_DuplicateMatchingRecord": "Duplicate Records (contoso_meetingroom_DuplicateMatchingRecord)",
+      "contoso_meetingroom_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "contoso_meetingroom_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "contoso_meetingroom_ProcessSession": "Process Sessions",
+      "contoso_meetingroom_SyncErrors": "Sync Errors",
+      "contoso_meetingroomid": "Meeting Room",
+      "contoso_meetingroomname": "Meeting Room Name",
+      "contoso_Reservation_MeetingRoom_contoso_M": "Reservations",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Meeting Rooms",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Meeting Rooms (Views)",
+    "Name": "_contoso_meetingroom_views",
+    "RelatedEntityName": "Meeting Rooms",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1050a267-d650-4d19-8f84-aed165646ae1": "Meeting Room Advanced Find View",
+      "2d58949b-da3b-41e8-827a-8106c10c07ad": "Active Meeting Rooms",
+      "68d3b531-87bf-4843-a93e-387fe0072b19": "Inactive Meeting Rooms",
+      "8458e0e1-3b65-4c33-8f78-43118a93fbfc": "Meeting Room Associated View",
+      "c7a6d3c5-938f-42eb-b9ba-d47bae153fba": "Meeting Room Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Available Now (Meeting Rooms)",
+    "Name": "contoso_contoso_meetingroom_available",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "contoso_available",
+        "OptionSetReferenceEntityName": "Meeting Rooms"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "contoso_available",
+    "RelatedEntityName": "Meeting Rooms",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Meeting Rooms)",
+    "Name": "contoso_meetingroom_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Meeting Rooms"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Meeting Rooms",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Meeting Rooms)",
+    "Name": "contoso_meetingroom_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Meeting Rooms"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Meeting Rooms",
+    "Type": "OptionSetInfo"
+  }
+]

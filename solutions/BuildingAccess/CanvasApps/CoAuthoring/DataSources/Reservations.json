@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "contoso_reservations",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "contoso_reservation",
+    "MaxGetRowsCount": 500,
+    "Name": "Reservations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "contoso_duration": "Duration",
+      "contoso_durationhours": "DurationHours",
+      "contoso_enddate": "End Date",
+      "contoso_MeetingRoom": "Meeting Room",
+      "contoso_reservation_AsyncOperations": "System Jobs",
+      "contoso_reservation_BulkDeleteFailures": "Bulk Delete Failures",
+      "contoso_reservation_DuplicateBaseRecord": "Duplicate Records (contoso_reservation_DuplicateBaseRecord)",
+      "contoso_reservation_DuplicateMatchingRecord": "Duplicate Records (contoso_reservation_DuplicateMatchingRecord)",
+      "contoso_reservation_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "contoso_reservation_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "contoso_reservation_ProcessSession": "Process Sessions",
+      "contoso_reservation_SyncErrors": "Sync Errors",
+      "contoso_reservationcode": "Reservation Code",
+      "contoso_reservationid": "Reservation",
+      "contoso_startdate": "Start Date",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Reservations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Reservations (Views)",
+    "Name": "_contoso_reservation_views",
+    "RelatedEntityName": "Reservations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "04c8021e-c249-4dc8-b8c3-db97e4716205": "Reservation Lookup View",
+      "113dc396-39aa-4a31-8a01-0b6305227b6f": "Reservation Associated View",
+      "1d92d089-6f18-47e1-a904-53ffeefc33ce": "Reservation Advanced Find View",
+      "7866b776-dc0b-4e0e-b2fc-774a36a156da": "Inactive Reservations",
+      "c52b8580-0913-4d94-90c6-19dce0c5ab37": "Active Reservations"
+    }
+  },
+  {
+    "DisplayName": "Status (Reservations)",
+    "Name": "contoso_reservation_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Reservations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Reservations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Reservations)",
+    "Name": "contoso_reservation_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Reservations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Reservations",
+    "Type": "OptionSetInfo"
+  }
+]

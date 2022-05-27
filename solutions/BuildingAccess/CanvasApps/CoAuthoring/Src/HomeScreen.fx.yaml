@@ -1,0 +1,47 @@
+HomeScreen As screen:
+    BackgroundImage: ='15549a14589707.5628669c64769'
+
+    Image3 As image:
+        Height: =320
+        Image: ='oficina (2)'
+        Width: =320
+        X: =160
+        Y: =294
+        ZIndex: =2
+
+    Button1 As button:
+        BorderColor: =Self.Fill
+        Fill: =RGBA(0, 223, 182, 1)
+        Font: =Font.'Segoe UI'
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: =Navigate(RoomSelectorScreen, ScreenTransition.Fade)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =24
+        Text: ="Book a meeting room"
+        Width: =465
+        X: =88
+        Y: =672
+        ZIndex: =3
+
+    Button1_1 As button:
+        BorderColor: =Self.Fill
+        Fill: =RGBA(203, 102, 102, 1)
+        Font: =Font.'Segoe UI'
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: =Navigate(CancelReservationScreen, ScreenTransition.Fade)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =24
+        Text: ="Cancel a reservation"
+        Width: =465
+        X: =88
+        Y: =792
+        ZIndex: =4
+

@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "contoso_buildings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "contoso_building",
+    "MaxGetRowsCount": 500,
+    "Name": "Buildings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "contoso_building_AsyncOperations": "System Jobs",
+      "contoso_building_BulkDeleteFailures": "Bulk Delete Failures",
+      "contoso_building_DuplicateBaseRecord": "Duplicate Records (contoso_building_DuplicateBaseRecord)",
+      "contoso_building_DuplicateMatchingRecord": "Duplicate Records (contoso_building_DuplicateMatchingRecord)",
+      "contoso_building_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "contoso_building_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "contoso_building_ProcessSession": "Process Sessions",
+      "contoso_building_SyncErrors": "Sync Errors",
+      "contoso_buildingid": "Building",
+      "contoso_buildingname": "Building Name",
+      "contoso_MeetingRoom_Building_contoso_Buil": "Meeting Rooms",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Buildings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Buildings (Views)",
+    "Name": "_contoso_building_views",
+    "RelatedEntityName": "Buildings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5f3c4ab6-3dbb-492b-b2d0-7c077417b7f9": "Building Advanced Find View",
+      "7d7792c0-65ea-4998-9149-63e7b6f66cc4": "Building Lookup View",
+      "9ed6a985-1035-438b-96d8-2471c58481ab": "Building Associated View",
+      "b6fcefdd-f7f0-4d80-98a0-d9d1d7fc65cb": "Active Buildings",
+      "dc2651be-c5b4-407d-abf0-b5eb45cf6c63": "Inactive Buildings"
+    }
+  },
+  {
+    "DisplayName": "Status (Buildings)",
+    "Name": "contoso_building_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Buildings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Buildings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Buildings)",
+    "Name": "contoso_building_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Buildings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Buildings",
+    "Type": "OptionSetInfo"
+  }
+]
