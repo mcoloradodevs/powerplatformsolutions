@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "dae_deviceorders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "dae_deviceorder",
+    "MaxGetRowsCount": 500,
+    "Name": "Device Orders_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "dae_approver": "Approver",
+      "dae_comments": "Comments",
+      "dae_devicename": "Device Name",
+      "dae_deviceorder_AsyncOperations": "System Jobs",
+      "dae_deviceorder_BulkDeleteFailures": "Bulk Delete Failures",
+      "dae_deviceorder_DuplicateBaseRecord": "Duplicate Records (dae_deviceorder_DuplicateBaseRecord)",
+      "dae_deviceorder_DuplicateMatchingRecord": "Duplicate Records (dae_deviceorder_DuplicateMatchingRecord)",
+      "dae_deviceorder_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "dae_deviceorder_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "dae_deviceorder_ProcessSession": "Process Sessions",
+      "dae_deviceorder_SyncErrors": "Sync Errors",
+      "dae_deviceorderid": "Device Order",
+      "dae_price": "Price",
+      "dae_price_base": "Price (Base)",
+      "dae_requestedby": "Requested By",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Device Orders_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Device Orders_1 (Views)",
+    "Name": "_dae_deviceorder_views",
+    "RelatedEntityName": "Device Orders_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2c54f06b-a733-40da-9aa9-e647a07b3c80": "Device Order Advanced Find View",
+      "554c2f2d-e7db-4aee-830b-5b573123b7c0": "Device Order Lookup View",
+      "7b6c7cbc-6abb-4562-aa6c-8f2da737ed84": "Inactive Device Orders",
+      "bd7f46d0-b3a4-4721-a9bf-1cc8b5534beb": "Active Device Orders",
+      "dd3d4342-a4fd-4b1c-8a00-a9e3cf630211": "Device Order Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Device Orders_1)",
+    "Name": "dae_deviceorder_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Device Orders_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Device Orders_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Device Orders_1)",
+    "Name": "dae_deviceorder_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Device Orders_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Device Orders_1",
+    "Type": "OptionSetInfo"
+  }
+]

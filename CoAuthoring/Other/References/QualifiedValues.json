@@ -1,0 +1,18 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_dae_deviceorder_forms",
+      "Namespace": "Device Orders_1 (Forms)",
+      "Values": {
+        "Information": "4df9a9c2-c039-4c55-acec-f8701651ba55"
+      }
+    },
+    {
+      "Kind": "default.cds_dae_newdevicerequest_forms",
+      "Namespace": "New Device Requests_1 (Forms)",
+      "Values": {
+        "Information": "606b96c0-3cdc-47f2-87f9-c8eaa895700e"
+      }
+    }
+  ]
+}

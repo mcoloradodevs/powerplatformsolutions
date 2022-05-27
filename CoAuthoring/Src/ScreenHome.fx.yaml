@@ -1,0 +1,154 @@
+ScreenHome As screen:
+
+    LabelTitle As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 94, 146, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =55
+        Size: =16
+        Text: ="Gestión de Dispositivos IT"
+        Width: =1366
+        ZIndex: =1
+
+    "ManufacturerGallery As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver4.0'":
+        Default: =First( Manufacturers )
+        Height: =713
+        Items: =Manufacturers
+        Layout: =Layout.Vertical
+        TemplateFill: |
+            =If(ThisItem.IsSelected, ColorFade(LabelTitle.Fill,75%)) 
+        TemplatePadding: =4
+        TemplateSize: =110
+        Width: =265
+        Y: =55
+        ZIndex: =1
+
+        Image5 As image:
+            Height: =80
+            Image: =ThisItem.Logo
+            OnSelect: =Select(Parent)
+            Width: =257
+            Y: =15
+            ZIndex: =1
+
+    Label2 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =55
+        Size: =10
+        Text: ="Hola, " & Char(10) & User().FullName
+        Width: =342
+        X: =968
+        ZIndex: =2
+
+    Image1 As image:
+        Height: =38
+        Image: =User().Image
+        RadiusBottomLeft: =38
+        RadiusBottomRight: =38
+        RadiusTopLeft: =38
+        RadiusTopRight: =38
+        Width: =38
+        X: =1315
+        Y: =8
+        ZIndex: =3
+
+    "DeviceGallery As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Height: =620
+        Items: |
+            =Filter(Devices , ManufacturerID = ManufacturerGallery.Selected.ManufacturerID ) 
+        TemplatePadding: =0
+        TemplateSize: =183
+        Width: =1101
+        X: =265
+        Y: =55
+        ZIndex: =5
+
+        Image4 As image:
+            Height: =296
+            Image: =ThisItem.Photo
+            OnSelect: =Select(Parent)
+            Width: =147
+            X: =(Parent.TemplateWidth / 2) - (Self.Width / 2)
+            Y: =16
+            ZIndex: =1
+
+        Title3 As label:
+            AutoHeight: =true
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.'Device Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 64
+            X: =32
+            Y: =272
+            ZIndex: =2
+
+        Subtitle3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.DeviceType
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Title3.Y + Title3.Height + 8
+            ZIndex: =3
+
+        Label3 As label:
+            AutoHeight: =true
+            Color: =If( ThisItem.Price >  1000 , OrangeRed , Gray )
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Text: |-
+                =Text(ThisItem.Price, "$##,###.00", "en-US" )
+            X: =32
+            Y: =363
+            ZIndex: =4
+
+        Checkbox1 As checkbox:
+            Default: =ThisItem in CompareList
+            OnCheck: =Collect( CompareList, ThisItem )
+            OnSelect: =Select(Parent)
+            OnUncheck: =Remove( CompareList, ThisItem ) 
+            Text: ="Comparar"
+            X: =18
+            Y: =428
+            ZIndex: =5
+
+    Button1 As button:
+        DisplayMode: =If( CountRows( CompareList ) <= 1 , DisplayMode.Disabled, DisplayMode.Edit )
+        Fill: =RGBA(0, 94, 146, 1)
+        Height: =36
+        OnSelect: =Navigate( ScreenCompare )
+        Size: =13
+        Text: ="Comparar " &  CountRows( CompareList ) & " dispositivos"
+        Width: =250
+        X: =1086
+        Y: =702
+        ZIndex: =6
+
+    Button1_1 As button:
+        DisplayMode: =If( CountRows( CompareList ) <= 1 , DisplayMode.Disabled, DisplayMode.Edit )
+        Fill: =RGBA(0, 94, 146, 1)
+        Height: =36
+        OnSelect: =Clear( CompareList ) 
+        Size: =13
+        Text: ="Borrar selección"
+        Width: =250
+        X: =806
+        Y: =702
+        ZIndex: =7
+

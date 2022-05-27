@@ -1,0 +1,106 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "dae_newdevicerequests",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "dae_newdevicerequest",
+    "MaxGetRowsCount": 500,
+    "Name": "New Device Requests_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "dae_devicename": "Device Name",
+      "dae_memory": "Memory",
+      "dae_newdevicerequest_AsyncOperations": "System Jobs",
+      "dae_newdevicerequest_BulkDeleteFailures": "Bulk Delete Failures",
+      "dae_newdevicerequest_DuplicateBaseRecord": "Duplicate Records (dae_newdevicerequest_DuplicateBaseRecord)",
+      "dae_newdevicerequest_DuplicateMatchingRecord": "Duplicate Records (dae_newdevicerequest_DuplicateMatchingRecord)",
+      "dae_newdevicerequest_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "dae_newdevicerequest_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "dae_newdevicerequest_ProcessSession": "Process Sessions",
+      "dae_newdevicerequest_SyncErrors": "Sync Errors",
+      "dae_newdevicerequestid": "New Device Request",
+      "dae_price": "Price",
+      "dae_price_base": "Price (Base)",
+      "dae_processor": "Processor",
+      "dae_requestedby": "Requested by",
+      "dae_screensize": "Screen Size",
+      "dae_storage": "Storage",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "New Device Requests_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "New Device Requests_1 (Views)",
+    "Name": "_dae_newdevicerequest_views",
+    "RelatedEntityName": "New Device Requests_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1f7568d7-8e64-4f00-82e4-6f0d896e2883": "New Device Request Lookup View",
+      "219dc7fb-0018-4419-9639-62763023e2c0": "New Device Request Associated View",
+      "3437c977-e5b4-4db4-b5d1-860d48325826": "New Device Request Advanced Find View",
+      "b5b779dd-4149-491f-9f54-93c60a308a94": "Active New Device Requests",
+      "f4152ccc-adbf-4728-b2aa-c2c895c99c22": "Inactive New Device Requests"
+    }
+  },
+  {
+    "DisplayName": "Status (New Device Requests_1)",
+    "Name": "dae_newdevicerequest_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "New Device Requests_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "New Device Requests_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (New Device Requests_1)",
+    "Name": "dae_newdevicerequest_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "New Device Requests_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "New Device Requests_1",
+    "Type": "OptionSetInfo"
+  }
+]

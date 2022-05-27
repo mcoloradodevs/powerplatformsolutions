@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "0d727047-ad50-42d2-a8fc-8cce570e2459",
+    "Name": "EnviarSolicituddeAprobacionparacompradeDispositivo",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "e018122e-36d1-ec11-a7b5-00224809bd21"
+  }
+]

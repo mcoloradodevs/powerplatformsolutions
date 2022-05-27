@@ -1,0 +1,141 @@
+{
+  "0877098b-5c26-4a1b-a1cd-7f4bf215784b": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1568/1.0.1568.2757/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://m365x830071.sharepoint.com/sites/PowerAppsTraining": {
+        "dataSources": {
+          "Device Orders": {
+            "tableName": "aa9de6e3-7359-4556-9d5b-6478a1ff5607"
+          },
+          "New Device Requests": {
+            "tableName": "fe83db09-5352-4ed0-8ed3-08e589313757"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Device Orders",
+      "New Device Requests"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0877098b-5c26-4a1b-a1cd-7f4bf215784b"
+  },
+  "3c979bc9-3ac1-459e-9306-5d61c37deb96": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3c979bc9-3ac1-459e-9306-5d61c37deb96"
+  },
+  "55743b67-2b6a-45c4-9a77-931f58c62a10": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "dbc6d839-e32a-441a-a50d-b2944a384857"
+    ],
+    "id": "55743b67-2b6a-45c4-9a77-931f58c62a10"
+  },
+  "6e3bfbda-0b39-4282-b29d-01da7390e330": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Approvals",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1535/1.0.1535.2607/approvals/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_approvals",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "dbc6d839-e32a-441a-a50d-b2944a384857"
+    ],
+    "id": "6e3bfbda-0b39-4282-b29d-01da7390e330"
+  },
+  "dbc6d839-e32a-441a-a50d-b2944a384857": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "55743b67-2b6a-45c4-9a77-931f58c62a10": {
+          "value": "shared_office365"
+        },
+        "6e3bfbda-0b39-4282-b29d-01da7390e330": {
+          "value": "shared_approvals"
+        },
+        "workflowEntityId": {
+          "value": "e018122e-36d1-ec11-a7b5-00224809bd21"
+        },
+        "workflowName": {
+          "value": "2fdc577f-c603-5d71-dcaf-3c65cf6e36f4"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_approvals": {
+          "value": "6e3bfbda-0b39-4282-b29d-01da7390e330"
+        },
+        "shared_office365": {
+          "value": "55743b67-2b6a-45c4-9a77-931f58c62a10"
+        },
+        "workflowEntityId": {
+          "value": "e018122e-36d1-ec11-a7b5-00224809bd21"
+        },
+        "workflowName": {
+          "value": "2fdc577f-c603-5d71-dcaf-3c65cf6e36f4"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "EnviarSolicituddeAprobacionparacompradeDispositivo"
+    ],
+    "dependencies": {
+      "shared_approvals": "6e3bfbda-0b39-4282-b29d-01da7390e330",
+      "shared_office365": "55743b67-2b6a-45c4-9a77-931f58c62a10"
+    },
+    "dependents": [],
+    "id": "dbc6d839-e32a-441a-a50d-b2944a384857"
+  }
+}

@@ -1,0 +1,5 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =ClearCollect( Colors, { colorName: "blue", colorCode: RGBA(0, 123, 203, 1) }, { colorName: "red", colorCode: RGBA( 1, 0 , 0, 1) } )
+
