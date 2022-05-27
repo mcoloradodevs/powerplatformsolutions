@@ -1,18 +1,18 @@
 {
   "QualifiedValues": [
     {
+      "Kind": "default.cds_contoso_building_forms",
+      "Namespace": "Buildings (Forms)",
+      "Values": {
+        "Information": "ff01d3eb-e59e-43c1-8d1e-80df6fcaab56"
+      }
+    },
+    {
       "Kind": "default.cds_contoso_meetingroom_forms",
       "Namespace": "Meeting Rooms (Forms)",
       "Values": {
         "Information": "14786db7-17ce-4563-a813-8458456bf02e",
         "Meeting Room quick create form": "2c6007d3-90cd-ec11-a7b5-000d3a1a427d"
-      }
-    },
-    {
-      "Kind": "default.cds_contoso_building_forms",
-      "Namespace": "Buildings (Forms)",
-      "Values": {
-        "Information": "ff01d3eb-e59e-43c1-8d1e-80df6fcaab56"
       }
     },
     {

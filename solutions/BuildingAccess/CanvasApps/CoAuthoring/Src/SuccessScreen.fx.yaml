@@ -8,6 +8,7 @@
         ZIndex: =1
 
     iconCheck1 As icon.Check:
+        Color: =RGBA(255, 255, 255, 1)
         Height: =iconCircle1.Height
         Icon: =Icon.Check
         PaddingBottom: =Self.PaddingTop
