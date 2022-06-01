@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{a3bfb364-9761-4171-8102-953307cfe4e1}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msus_modelid" select="1" icon="1" preview="1">
+        <row name="result" id="msus_carid">
+          <cell name="msus_modelid" width="300" />
+          <cell name="msus_make" width="100" />
+          <cell name="msus_model" width="100" />
+          <cell name="msus_year" width="100" />
+          <cell name="msus_description" width="100" />
+          <cell name="msus_cylinders" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msus_car">
+          <attribute name="msus_carid" />
+          <attribute name="msus_modelid" />
+          <order attribute="msus_modelid" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="msus_make" />
+          <attribute name="msus_model" />
+          <attribute name="msus_year" />
+          <attribute name="msus_description" />
+          <attribute name="msus_cylinders" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Cars" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
