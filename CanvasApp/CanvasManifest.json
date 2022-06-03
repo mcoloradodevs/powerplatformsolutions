@@ -99,7 +99,7 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "Screen_NoContainers",
-    "Screen_Containers"
+    "Screen_Containers",
+    "Screen_NoContainers"
   ]
 }
