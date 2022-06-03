@@ -1,0 +1,106 @@
+Screen_NoContainers As screen:
+    BackgroundImage: =
+    Fill: =RGBA(0, 0, 0, 0.93)
+
+    Container1 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =Parent.Height*5%
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =4
+
+        icn_hamburger_2 As icon.Hamburger:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =Parent.Height
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            Icon: =Icon.Hamburger
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =15
+            Width: =Self.Height
+            ZIndex: =1
+
+        Label1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =Parent.Height
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            PaddingLeft: =10
+            PaddingRight: =10
+            Size: =18
+            Text: ="Test App"
+            Width: =Parent.Width - icn_hamburger_2.Width - Image1.Width - rct_1.Width
+            ZIndex: =2
+
+        Image1 As image:
+            AlignInContainer: =AlignInContainer.Center
+            Height: =Parent.Height-10
+            Image: =User().Image
+            LayoutMinHeight: =320
+            LayoutMinWidth: =320
+            RadiusBottomLeft: =Self.Height
+            RadiusBottomRight: =Self.Height
+            RadiusTopLeft: =Self.Height
+            RadiusTopRight: =Self.Height
+            Width: =Self.Height
+            ZIndex: =3
+
+        rct_1 As rectangle:
+            Height: =Parent.Height
+            Width: =5
+            ZIndex: =4
+
+    Container2 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height - Container1.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =icn_hamburger_2.Width + 10
+        Width: =Parent.Width
+        Y: =Container1.Height
+        ZIndex: =5
+
+        Label2 As label:
+            AutoHeight: =true
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            PaddingBottom: =50
+            PaddingLeft: =0
+            PaddingRight: =20
+            PaddingTop: =50
+            Size: =24
+            Text: ="Form details"
+            Width: =Parent.Width -Parent.PaddingLeft
+            ZIndex: =1
+
+        Label3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            PaddingLeft: =0
+            Size: =14
+            Text: ="Name"
+            Width: =300
+            ZIndex: =2
+
+        TextInput1 As text:
+            AlignInContainer: =AlignInContainer.Start
+            Default: =""
+            Height: =70
+            HintText: ="Type in a name"
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =20
+            Width: =500
+            ZIndex: =3
+
