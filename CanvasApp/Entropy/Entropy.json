@@ -1,0 +1,66 @@
+{
+  "ComponentIndexes": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "DatePicker1": 11,
+    "icn_hamburger": 5,
+    "img_profile": 6,
+    "lbl_date": 10,
+    "lbl_header": 4,
+    "lbl_name": 8,
+    "lbl_title": 7,
+    "Screen1": 3,
+    "txt_name": 9
+  },
+  "FunctionParamsInvariantScripts": {},
+  "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "06/03/2022 02:11:58",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {},
+  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalResourceFileNames": {
+    "MSC18_scenicsChicago_002": "a5959110-eee0-4c1c-94fc-19677e405e5c.jpg"
+  },
+  "LocalResourceRootPaths": {
+    "MSC18_scenicsChicago_002": "https://docserverpwaprodwus.blob.core.windows.net/4b4f2bbc-88c4-4af1-910e-d98c3b4cd310-1/resource/26bff770-5374-4505-afff-e86fa1674767.jpg?sv=2017-04-17&sr=b&sig=i1eZ%2FB9%2BVMwoKO3whb5JONJikj1Oh%2BlP3BXfz1JNTJE%3D&spr=https&se=2022-06-04T01%3A56%3A31Z&sp=r"
+  },
+  "OrderComponentMetadata": {},
+  "OrderComponentTemplate": {},
+  "OrderDataSource": {},
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {
+    "datepicker": 4,
+    "icon": 0,
+    "image": 2,
+    "label": 1,
+    "text": 3
+  },
+  "PublishOrderIndices": {
+    "App": 0,
+    "DatePicker1": 7,
+    "icn_hamburger": 0,
+    "img_profile": 2,
+    "lbl_date": 6,
+    "lbl_header": 1,
+    "lbl_name": 4,
+    "lbl_title": 3,
+    "Screen1": 0,
+    "txt_name": 5
+  },
+  "ResourcesJsonIndices": {
+    "Image-MSC18_scenicsChicago_002": 0,
+    "Image-SampleImage": 1
+  },
+  "RuleScreenIdWithoutScreen": {},
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.020815,
+    "ControlCount": {
+      "label": 1
+    },
+    "ErrorCount": 0
+  },
+  "WasLocalDatabaseReferencesEmpty": true
+}
