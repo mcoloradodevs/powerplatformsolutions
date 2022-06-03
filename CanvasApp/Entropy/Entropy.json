@@ -1,22 +1,92 @@
 {
   "ComponentIndexes": {},
-  "ControlUniqueIds": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "btn_save_1": 12,
+    "Container1": 17,
+    "DatePicker1_1": 11,
+    "icn_hamburger_1": 4,
+    "icn_hamburger_2": 18,
+    "Image1": 20,
+    "img_profile_1": 6,
+    "Label1": 19,
+    "lbl_date_1": 10,
+    "lbl_header_1": 5,
+    "lbl_name_1": 8,
+    "lbl_title_1": 7,
+    "rct_1": 21,
+    "Screen_Containers": 3,
+    "Screen_NoContainers": 13,
+    "txt_name_1": 9
+  },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "06/03/2022 02:31:54",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
-  "LocalResourceFileNames": {},
-  "LocalResourceRootPaths": {},
+  "LocalResourceFileNames": {
+    "MSC18_scenicsChicago_002": "0001.jpg"
+  },
+  "LocalResourceRootPaths": {
+    "MSC18_scenicsChicago_002": "https://docserverpwaprodwus.blob.core.windows.net/4ef34b0b-ee0d-4d35-bb54-4b69054adafe-1/resource/Assets0Images00001.jpg?sv=2017-04-17&sr=b&sig=1jmIWP5Bu94ZjCLUWh08w8v8ZsmOq3aKEwG4airF3VQ%3D&spr=https&se=2022-06-04T02%3A38%3A38Z&sp=r"
+  },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
-  "OrderDataSource": {},
+  "OrderDataSource": {
+    "col_Details": 0
+  },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
-  "OrderXMLTemplate": {},
-  "PublishOrderIndices": {},
-  "ResourcesJsonIndices": {},
+  "OrderXMLTemplate": {
+    "button": 3,
+    "datepicker": 5,
+    "groupContainer": 6,
+    "icon": 1,
+    "image": 0,
+    "label": 2,
+    "rectangle": 7,
+    "text": 4
+  },
+  "PublishOrderIndices": {
+    "App": 0,
+    "btn_save_1": 8,
+    "Container1": 0,
+    "DatePicker1_1": 13,
+    "icn_hamburger_1": 6,
+    "icn_hamburger_2": 1,
+    "Image1": 4,
+    "img_profile_1": 5,
+    "Label1": 2,
+    "lbl_date_1": 12,
+    "lbl_header_1": 7,
+    "lbl_name_1": 10,
+    "lbl_title_1": 9,
+    "rct_1": 3,
+    "Screen_Containers": 2,
+    "Screen_NoContainers": 12,
+    "txt_name_1": 11
+  },
+  "ResourcesJsonIndices": {
+    "Image-MSC18_scenicsChicago_002": 1,
+    "Image-SampleImage": 0
+  },
   "RuleScreenIdWithoutScreen": {},
-  "TemplateVersions": {}
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.0595879,
+    "ControlCount": {
+      "button": 1,
+      "datepicker": 1,
+      "icon": 2,
+      "image": 2,
+      "label": 5,
+      "screen": 2,
+      "text": 1
+    },
+    "DeserializationLoadTime": 2.2948605,
+    "ErrorCount": 0
+  },
+  "WasLocalDatabaseReferencesEmpty": true
 }
