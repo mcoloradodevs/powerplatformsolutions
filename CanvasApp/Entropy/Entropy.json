@@ -1,22 +1,80 @@
 {
   "ComponentIndexes": {},
-  "ControlUniqueIds": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "btn_save_1": 12,
+    "DatePicker1_1": 11,
+    "icn_hamburger_1": 4,
+    "img_profile_1": 6,
+    "lbl_date_1": 10,
+    "lbl_header_1": 5,
+    "lbl_name_1": 8,
+    "lbl_title_1": 7,
+    "Screen_Containers": 3,
+    "Screen_NoContainers": 13,
+    "txt_name_1": 9
+  },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "06/03/2022 02:23:52",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
-  "LocalResourceFileNames": {},
-  "LocalResourceRootPaths": {},
+  "LocalResourceFileNames": {
+    "MSC18_scenicsChicago_002": "0001.jpg"
+  },
+  "LocalResourceRootPaths": {
+    "MSC18_scenicsChicago_002": "https://docserverpwaprodeus.blob.core.windows.net/43875a41-5e86-49e5-889f-c18671d919c8-1/resource/Assets0Images00001.jpg?sv=2017-04-17&sr=b&sig=gYzvx%2Bcii7XI1yABgm8XrZVb2Slbk370z%2FLjW1GJ8aw%3D&spr=https&se=2022-06-04T02%3A36%3A01Z&sp=r"
+  },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
-  "OrderDataSource": {},
+  "OrderDataSource": {
+    "col_Details": 0
+  },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
-  "OrderXMLTemplate": {},
-  "PublishOrderIndices": {},
-  "ResourcesJsonIndices": {},
+  "OrderXMLTemplate": {
+    "button": 5,
+    "datepicker": 4,
+    "icon": 0,
+    "image": 2,
+    "label": 1,
+    "text": 3
+  },
+  "PublishOrderIndices": {
+    "App": 0,
+    "btn_save_1": 11,
+    "DatePicker1_1": 10,
+    "icn_hamburger_1": 3,
+    "img_profile_1": 5,
+    "lbl_date_1": 9,
+    "lbl_header_1": 4,
+    "lbl_name_1": 7,
+    "lbl_title_1": 6,
+    "Screen_Containers": 2,
+    "Screen_NoContainers": 12,
+    "txt_name_1": 8
+  },
+  "ResourcesJsonIndices": {
+    "Image-MSC18_scenicsChicago_002": 1,
+    "Image-SampleImage": 0
+  },
   "RuleScreenIdWithoutScreen": {},
-  "TemplateVersions": {}
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.0610481,
+    "ControlCount": {
+      "button": 1,
+      "datepicker": 1,
+      "icon": 1,
+      "image": 1,
+      "label": 4,
+      "screen": 2,
+      "text": 1
+    },
+    "DeserializationLoadTime": 1.7393745,
+    "ErrorCount": 0
+  },
+  "WasLocalDatabaseReferencesEmpty": true
 }
