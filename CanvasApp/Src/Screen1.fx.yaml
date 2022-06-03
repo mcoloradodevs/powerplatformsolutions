@@ -100,8 +100,10 @@ Screen1 As screen:
         Y: =lbl_date.Height + lbl_date.Y
         ZIndex: =8
 
-    Button1 As button:
+    btn_save As button:
         Height: =Parent.Height*5%
+        OnSelect: |-
+            =ClearCollect( col_Details, {name: txt_name.Text, date: DatePicker1.SelectedDate})
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
