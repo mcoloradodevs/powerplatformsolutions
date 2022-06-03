@@ -100,3 +100,16 @@ Screen1 As screen:
         Y: =lbl_date.Height + lbl_date.Y
         ZIndex: =8
 
+    Button1 As button:
+        Height: =Parent.Height*5%
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =20
+        Text: ="Save"
+        Width: =280
+        X: =icn_hamburger.Width + 10
+        Y: =Parent.Height - Self.Height - 50
+        ZIndex: =9
+
