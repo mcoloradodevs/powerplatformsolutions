@@ -1,86 +1,22 @@
 {
   "ComponentIndexes": {},
-  "ControlUniqueIds": {
-    "App": 1,
-    "btn_save_1": 12,
-    "DatePicker1_1": 11,
-    "icn_hamburger_1": 4,
-    "icn_hamburger_2": 15,
-    "img_profile_1": 6,
-    "img_profile_2": 16,
-    "lbl_date_1": 10,
-    "lbl_header_1": 5,
-    "lbl_header_2": 14,
-    "lbl_name_1": 8,
-    "lbl_title_1": 7,
-    "Screen_Containers": 3,
-    "Screen_NoContainers": 13,
-    "txt_name_1": 9
-  },
+  "ControlUniqueIds": {},
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "06/03/2022 02:23:32",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
-  "LocalResourceFileNames": {
-    "MSC18_scenicsChicago_002": "0001.jpg"
-  },
-  "LocalResourceRootPaths": {
-    "MSC18_scenicsChicago_002": "https://docserverpwaprodwus.blob.core.windows.net/4ef34b0b-ee0d-4d35-bb54-4b69054adafe-1/resource/Assets0Images00001.jpg?sv=2017-04-17&sr=b&sig=DrWPrMQ4CvQOvVZ3IxXWIozIq%2FNhNeRPXu5BtGorVdk%3D&spr=https&se=2022-06-04T02%3A35%3A28Z&sp=r"
-  },
+  "LocalResourceFileNames": {},
+  "LocalResourceRootPaths": {},
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
-  "OrderDataSource": {
-    "col_Details": 0
-  },
+  "OrderDataSource": {},
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
-  "OrderXMLTemplate": {
-    "button": 5,
-    "datepicker": 4,
-    "icon": 0,
-    "image": 2,
-    "label": 1,
-    "text": 3
-  },
-  "PublishOrderIndices": {
-    "App": 0,
-    "btn_save_1": 11,
-    "DatePicker1_1": 10,
-    "icn_hamburger_1": 3,
-    "icn_hamburger_2": 0,
-    "img_profile_1": 5,
-    "img_profile_2": 2,
-    "lbl_date_1": 9,
-    "lbl_header_1": 4,
-    "lbl_header_2": 1,
-    "lbl_name_1": 7,
-    "lbl_title_1": 6,
-    "Screen_Containers": 2,
-    "Screen_NoContainers": 12,
-    "txt_name_1": 8
-  },
-  "ResourcesJsonIndices": {
-    "Image-MSC18_scenicsChicago_002": 1,
-    "Image-SampleImage": 0
-  },
+  "OrderXMLTemplate": {},
+  "PublishOrderIndices": {},
+  "ResourcesJsonIndices": {},
   "RuleScreenIdWithoutScreen": {},
-  "TemplateVersions": {},
-  "VolatileProperties": {
-    "AnalysisLoadTime": 0.0516733,
-    "ControlCount": {
-      "button": 1,
-      "datepicker": 1,
-      "icon": 2,
-      "image": 2,
-      "label": 5,
-      "screen": 2,
-      "text": 1
-    },
-    "DeserializationLoadTime": 2.0677938,
-    "ErrorCount": 0
-  },
-  "WasLocalDatabaseReferencesEmpty": true
+  "TemplateVersions": {}
 }
