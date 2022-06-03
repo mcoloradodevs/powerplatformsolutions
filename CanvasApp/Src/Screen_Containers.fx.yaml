@@ -39,6 +39,7 @@ Screen_Containers As screen:
         RadiusTopRight: =Self.Height
         Width: =Self.Height
         X: =Parent.Width-Self.Width-10
+        Y: =lbl_header_1.Y + lbl_header_1.Height/2 - Self.Height/2
         ZIndex: =3
 
     lbl_title_1 As label:
