@@ -1,0 +1,116 @@
+Screen_Containers As screen:
+    BackgroundImage: =
+    Fill: =RGBA(0, 0, 0, 0.93)
+
+    lbl_header_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =Parent.Height*5%
+        PaddingLeft: =20
+        PaddingRight: =20
+        Size: =18
+        Text: ="Test App"
+        Width: =Parent.Width - icn_hamburger_1.Width
+        X: =icn_hamburger_1.X + icn_hamburger_1.Width
+        ZIndex: =1
+
+    icn_hamburger_1 As icon.Hamburger:
+        BorderColor: =RGBA(56, 96, 178, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =Parent.Height*5%
+        HoverFill: =ColorFade( Self.Fill, -20%)
+        Icon: =Icon.Hamburger
+        PaddingBottom: =10
+        PaddingLeft: =15
+        PaddingRight: =15
+        PaddingTop: =10
+        Width: =Self.Height
+        ZIndex: =2
+
+    img_profile_1 As image:
+        Height: =(Parent.Height*5%) - 10
+        Image: =User().Image
+        RadiusBottomLeft: =Self.Height
+        RadiusBottomRight: =Self.Height
+        RadiusTopLeft: =Self.Height
+        RadiusTopRight: =Self.Height
+        Width: =Self.Height
+        X: =Parent.Width-Self.Width-10
+        ZIndex: =3
+
+    lbl_title_1 As label:
+        AutoHeight: =true
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        PaddingBottom: =50
+        PaddingLeft: =icn_hamburger_1.Width + 10
+        PaddingRight: =10
+        PaddingTop: =50
+        Size: =24
+        Text: ="Form Details"
+        Width: =Parent.Width
+        Y: =icn_hamburger_1.Height+ icn_hamburger_1.Y
+        ZIndex: =4
+
+    lbl_name_1 As label:
+        AutoHeight: =true
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        Height: =70
+        PaddingLeft: =icn_hamburger_1.Width + 10
+        Size: =14
+        Text: ="Name"
+        Width: =300
+        Y: =lbl_title_1.Y + lbl_title_1.Height
+        ZIndex: =5
+
+    txt_name_1 As text:
+        Default: =""
+        Height: =70
+        HintText: ="Type in a name"
+        Size: =18
+        Width: =500
+        X: =icn_hamburger_1.Width + 10
+        Y: =lbl_name_1.Height + lbl_name_1.Y
+        ZIndex: =6
+
+    lbl_date_1 As label:
+        AutoHeight: =true
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        Height: =70
+        PaddingLeft: =icn_hamburger_1.Width + 10
+        Size: =14
+        Text: ="Date"
+        Width: =300
+        Y: =txt_name_1.Y + txt_name_1.Height + 40
+        ZIndex: =7
+
+    DatePicker1_1 As datepicker:
+        Height: =70
+        Size: =18
+        Width: =500
+        X: =icn_hamburger_1.Width + 10
+        Y: =lbl_date_1.Height + lbl_date_1.Y
+        ZIndex: =8
+
+    btn_save_1 As button:
+        Height: =Parent.Height*5%
+        OnSelect: |-
+            =ClearCollect( col_Details, {name: txt_name_1.Text, date: DatePicker1_1.SelectedDate})
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =20
+        Text: ="Save"
+        Width: =280
+        X: =icn_hamburger_1.Width + 10
+        Y: =Parent.Height - Self.Height - 50
+        ZIndex: =9
+
