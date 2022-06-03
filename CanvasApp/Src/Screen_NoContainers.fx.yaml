@@ -56,3 +56,51 @@ Screen_NoContainers As screen:
             Width: =5
             ZIndex: =4
 
+    Container2 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height - Container1.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =icn_hamburger_2.Width + 10
+        Width: =Parent.Width
+        Y: =Container1.Height
+        ZIndex: =5
+
+        Label2 As label:
+            AutoHeight: =true
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            PaddingBottom: =50
+            PaddingLeft: =0
+            PaddingRight: =20
+            PaddingTop: =50
+            Size: =24
+            Text: ="Form details"
+            Width: =Parent.Width -Parent.PaddingLeft
+            ZIndex: =1
+
+        Label3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            PaddingLeft: =0
+            Size: =14
+            Text: ="Name"
+            Width: =300
+            ZIndex: =2
+
+        TextInput1 As text:
+            AlignInContainer: =AlignInContainer.Start
+            Default: =""
+            Height: =70
+            HintText: ="Type in a name"
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =20
+            Width: =500
+            ZIndex: =3
+
