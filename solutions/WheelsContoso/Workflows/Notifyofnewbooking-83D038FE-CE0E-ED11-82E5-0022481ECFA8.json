@@ -1,0 +1,302 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_approvals": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr97e_sharedapprovals_e3ac0"
+        },
+        "api": {
+          "name": "shared_approvals"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr97e_sharedcommondataserviceforapps_4fda9"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_teams": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedteams_4ca06"
+        },
+        "api": {
+          "name": "shared_teams"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "059c5db5-f3f4-4c0d-ac73-6dad2ad9ddc7"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "msus_seatbooking",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/runas": 3
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Start_and_wait_for_an_approval": {
+          "runAfter": {
+            "Get_email_of_passenger": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b161fbf5-92ea-4063-89f5-c32376b84098"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_approvals",
+              "operationId": "StartAndWaitForAnApproval",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
+            },
+            "parameters": {
+              "approvalType": "Basic",
+              "WebhookApprovalCreationInput/title": "Recibiste una solicitud de reserva en Wheels",
+              "WebhookApprovalCreationInput/assignedTo": "@{outputs('Get_email_of_driver')?['body/internalemailaddress']};",
+              "WebhookApprovalCreationInput/details": "### Hola @{outputs('Get_email_of_driver')?['body/fullname']}\nTienes una solicitud de @{triggerOutputs()?['body/msus_passengername']}:\n- **Hora de salida:** @{convertFromUtc(outputs('Get_id_of_driver')?['body/msus_pickuptime'], 'SA Pacific Standard Time')}\n- **Cupos restantes:** @{outputs('Get_id_of_driver')?['body/msus_openseats']}\nPuedes contactar a tu pasajero(a) haciendo clic en el link.",
+              "WebhookApprovalCreationInput/itemLink": "https://teams.microsoft.com/l/chat/0/0?users=@{outputs('Get_email_of_passenger')?['body/internalemailaddress']}",
+              "WebhookApprovalCreationInput/itemLinkDescription": "Chat con tu pasajero(a) en Teams",
+              "WebhookApprovalCreationInput/enableNotifications": true,
+              "WebhookApprovalCreationInput/enableReassignment": true
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_id_of_driver": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "9738b387-fcbe-4ee8-9b77-b2d916dacc73"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msus_wheelsads",
+              "recordId": "@triggerOutputs()?['body/_msus_wheelsad_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_email_of_driver": {
+          "runAfter": {
+            "Get_id_of_driver": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d34cafff-35f2-4a61-a192-20a411e2266f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@outputs('Get_id_of_driver')?['body/_createdby_value']",
+              "$select": "internalemailaddress, fullname"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_email_of_passenger": {
+          "runAfter": {
+            "Get_email_of_driver": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "177054d4-464c-40c2-b174-89d8f51ff4ce"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@triggerOutputs()?['body/_createdby_value']",
+              "$select": "internalemailaddress"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Update_a_row": {
+              "runAfter": {
+                "Apply_to_each": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "033572db-fbf5-4995-b502-b993c9ea2ba5"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "msus_seatbookings",
+                  "recordId": "@triggerOutputs()?['body/msus_seatbookingid']",
+                  "item/msus_status": 100000001
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Apply_to_each": {
+              "foreach": "@outputs('Start_and_wait_for_an_approval')?['body/responses']",
+              "actions": {
+                "Post_message_in_a_chat_or_channel": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "6b8f3233-b675-466f-b103-73c148cd1d76"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_teams",
+                      "operationId": "PostMessageToConversation",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                    },
+                    "parameters": {
+                      "poster": "Flow bot",
+                      "location": "Chat with Flow bot",
+                      "body/recipient": "@{outputs('Get_email_of_passenger')?['body/internalemailaddress']};",
+                      "body/messageBody": "<p><strong>¡Tu Wheels te ha aceptado! </strong>Chatea con @{outputs('Get_email_of_driver')?['body/fullname']} en <a href=\"https://teams.microsoft.com/l/chat/0/0?users=@{outputs('Get_email_of_driver')?['body/internalemailaddress']}\">Teams</a>&nbsp;</p>\n<p><strong>Mensaje del (la) conductor(a): </strong> @{items('Apply_to_each')?['comments']}",
+                      "body/isAlert": true
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "92974480-57e4-42b5-8650-e78aa32a5e45"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Start_and_wait_for_an_approval": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Apply_to_each_2": {
+                "foreach": "@outputs('Start_and_wait_for_an_approval')?['body/responses']",
+                "actions": {
+                  "Post_message_in_a_chat_or_channel_2": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "5cc8252a-46ec-4ca6-bf12-8adc2a448114"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_teams",
+                        "operationId": "PostMessageToConversation",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                      },
+                      "parameters": {
+                        "poster": "Flow bot",
+                        "location": "Chat with Flow bot",
+                        "body/recipient": "@{outputs('Get_email_of_passenger')?['body/internalemailaddress']};",
+                        "body/messageBody": "<p><strong>¡Tu Wheels te ha aceptado! </strong>Chatea con @{outputs('Get_email_of_driver')?['body/fullname']} en <a href=\"https://teams.microsoft.com/l/chat/0/0?users=@{outputs('Get_email_of_driver')?['body/internalemailaddress']}\">Teams</a></p>\n<p><strong>Mensaje del (la) conductor(a): </strong>@{items('Apply_to_each_2')?['comments']}</p>",
+                        "body/isAlert": true
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "1a5bd209-f313-4fcb-bd8a-523a735348b3"
+                },
+                "type": "Foreach"
+              },
+              "Delete_a_row": {
+                "runAfter": {
+                  "Apply_to_each_2": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "f6a6ea06-c7dc-46f0-bdd3-03cacaa54cd5"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "DeleteRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "msus_seatbookings",
+                    "recordId": "@triggerOutputs()?['body/msus_seatbookingid']"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@outputs('Start_and_wait_for_an_approval')?['body/outcome']",
+              "Approve"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fc515d39-6bc6-469f-8ba5-4b9f790f8d79"
+          },
+          "type": "If"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

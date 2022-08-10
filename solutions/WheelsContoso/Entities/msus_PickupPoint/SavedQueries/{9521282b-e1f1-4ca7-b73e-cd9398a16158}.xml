@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9521282b-e1f1-4ca7-b73e-cd9398a16158}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msus_name" select="1" icon="1" preview="1">
+        <row name="result" id="msus_pickuppointid">
+          <cell name="msus_name" width="300" />
+          <cell name="msus_address" width="100" />
+          <cell name="msus_zone" width="100" />
+          <cell name="msus_neighborhood" width="100" />
+          <cell name="statecode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msus_pickuppoint">
+          <attribute name="msus_pickuppointid" />
+          <attribute name="msus_name" />
+          <order attribute="msus_name" descending="false" />
+          <attribute name="msus_address" />
+          <attribute name="msus_zone" />
+          <attribute name="msus_neighborhood" />
+          <attribute name="statecode" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All Pickup Points" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

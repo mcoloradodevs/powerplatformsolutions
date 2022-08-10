@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>msus_app_fd35d</Name>
+  <AppVersion>2022-07-28T22:39:44Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22072.25.0</CreatedByClientVersion>
+  <MinClientVersion>3.22072.25.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.22072.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220728T223944Z-3.22072.25.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Add new pickup points</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"b8a1d4ac-2a65-46a1-81a8-eb7683f4e9a6":{"id":"/providers/microsoft.powerapps/apis/shared_microsoftspatialservices","displayName":"Spatial Services","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/microsoftspatialservices/icon.png","dataSources":["SpatialServices"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium","isCustomApiSolutionAware":false},"487dbdb4-3535-41a2-9a67-f8e9ab28004e":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["GetPlaceAddress"],"dependencies":["1380a3fc-d92a-48dd-96f1-169bc20a3222"],"dependents":[],"parameterHints":{"workflowName":{"value":"2f31e037-206c-449d-9758-09aeeacfb8f7"},"workflowEntityId":{"value":"7b13ceec-b70e-ed11-82e5-0022481ecfa8"},"1380a3fc-d92a-48dd-96f1-169bc20a3222":{"value":"shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0"}},"parameterHintsV2":{"workflowName":{"value":"2f31e037-206c-449d-9758-09aeeacfb8f7"},"workflowEntityId":{"value":"7b13ceec-b70e-ed11-82e5-0022481ecfa8"},"shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0":{"value":"1380a3fc-d92a-48dd-96f1-169bc20a3222"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"],"isCustomApiSolutionAware":false},"1380a3fc-d92a-48dd-96f1-169bc20a3222":{"id":"/providers/microsoft.powerapps/apis/shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0","displayName":"Google Maps Places API","iconUri":"https://prodapiicons.cdn.powerappscdn.net/20220728t000000z7b13ed3cf454469d9a035f8ff9195844/customconnectoricon.png","dataSources":[],"dependencies":[],"dependents":["487dbdb4-3535-41a2-9a67-f8e9ab28004e"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","customApiLogicalName":"msus_google-20maps-20places-20api","isCustomApiSolutionAware":true}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Pickup Points":{"entitySetName":"msus_pickuppoints","logicalName":"msus_pickuppoint"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"msus_google-20maps-20places-20api","componenttype":372,"componenttypeplatformname":"connector"},{"logicalname":"msus_pickuppoint","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/msus_app_fd35d_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/msus_app_fd35d_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
