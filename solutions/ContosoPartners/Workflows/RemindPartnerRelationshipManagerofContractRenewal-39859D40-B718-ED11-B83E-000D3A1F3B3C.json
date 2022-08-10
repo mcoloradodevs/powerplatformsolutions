@@ -1,0 +1,340 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "par_Dataverse_ContosoPartners"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_teams_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "par_Teams_ContosoPartners"
+        },
+        "api": {
+          "name": "shared_teams"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "startTime": "2022-08-10T15:00:00Z",
+            "schedule": {
+              "weekDays": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "342853e0-c71e-4b07-ad3f-e1fba8b36ac5"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Initialize_variable_today": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "c148654a-1b1e-4084-b9b2-5ced51d50463"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "var_today",
+                "type": "integer",
+                "value": "@dayOfWeek(utcnow())"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_thismonday": {
+          "runAfter": {
+            "Initialize_variable_today": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c3ca6209-740e-49e3-bbe6-d53a8a30e9f3"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "var_thismonday",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_thisfriday": {
+          "runAfter": {
+            "Initialize_variable_thismonday": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a6a84dd9-7600-46b2-a6d2-f7d7046337bf"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "var_thisfriday",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Switch": {
+          "runAfter": {
+            "Initialize_variable_thisfriday": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case_Monday": {
+              "case": 1,
+              "actions": {
+                "Set_variable_thisMonday": {
+                  "runAfter": {},
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thismonday",
+                    "value": "@{startOfDay(utcNow())}"
+                  }
+                },
+                "Set_variable_thisFriday": {
+                  "runAfter": {
+                    "Set_variable_thisMonday": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thisfriday",
+                    "value": "@{addDays(startOfDay(utcNow()), 4)}"
+                  }
+                }
+              }
+            },
+            "Case_Tuesday": {
+              "case": 2,
+              "actions": {
+                "Set_variable_thisMonday_2": {
+                  "runAfter": {},
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thismonday",
+                    "value": "@{addDays(startOfDay(utcNow()), -1 )}"
+                  }
+                },
+                "Set_variable_thisFriday_2": {
+                  "runAfter": {
+                    "Set_variable_thisMonday_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thisfriday",
+                    "value": "@{addDays(startOfDay(utcNow()), 3 )}"
+                  }
+                }
+              }
+            },
+            "Case_Wednesday": {
+              "case": 3,
+              "actions": {
+                "Set_variable_thisMonday_3": {
+                  "runAfter": {},
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thismonday",
+                    "value": "@{addDays(startOfDay(utcNow()), -2)}"
+                  }
+                },
+                "Set_variable_thisFriday_3": {
+                  "runAfter": {
+                    "Set_variable_thisMonday_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thisfriday",
+                    "value": "@{addDays(startOfDay(utcNow()), 2 )}"
+                  }
+                }
+              }
+            },
+            "Case_Thursday": {
+              "case": 4,
+              "actions": {
+                "Set_variable_thisMonday_4": {
+                  "runAfter": {},
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thismonday",
+                    "value": "@{addDays(startOfDay(utcNow()), -3 )}"
+                  }
+                },
+                "Set_variable_thisFriday_4": {
+                  "runAfter": {
+                    "Set_variable_thisMonday_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thisfriday",
+                    "value": "@{addDays(startOfDay(utcNow()), 1 )}"
+                  }
+                }
+              }
+            },
+            "Case_Friday": {
+              "case": 5,
+              "actions": {
+                "Set_variable_thisMonday_5": {
+                  "runAfter": {},
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thismonday",
+                    "value": "@{addDays(startOfDay(utcNow()), -4 )}"
+                  }
+                },
+                "Set_variable_thisFriday_5": {
+                  "runAfter": {
+                    "Set_variable_thisMonday_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "var_thisfriday",
+                    "value": "@{startOfDay(utcNow())}"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@variables('var_today')",
+          "metadata": {
+            "operationMetadataId": "763c89b0-3977-4641-bc32-f3620d9af9aa"
+          },
+          "type": "Switch"
+        },
+        "List_rows": {
+          "runAfter": {
+            "Switch": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "84ff39c6-4990-4d67-a8b8-406f1ad9ceab"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "par_partners",
+              "$filter": "par_contractrenewaldate ge '@{variables('var_thismonday')}' and par_contractrenewaldate le '@{variables('var_thisfriday')}'"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Apply_to_each": {
+          "foreach": "@outputs('List_rows')?['body/value']",
+          "actions": {
+            "Get_the_Owner_record": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "d761c2c1-616d-4c96-b8c5-28c201dca0e0"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "systemusers",
+                  "recordId": "@items('Apply_to_each')?['_ownerid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Post_message_in_a_chat_or_channel": {
+              "runAfter": {
+                "Get_the_Owner_record": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "43c51c61-cb07-42da-912c-aad9ef337f0c"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_teams_1",
+                  "operationId": "PostMessageToConversation",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                },
+                "parameters": {
+                  "poster": "Flow bot",
+                  "location": "Chat with Flow bot",
+                  "body/recipient": "@{outputs('Get_the_Owner_record')?['body/internalemailaddress']};",
+                  "body/messageBody": "<p><span style=\"font-size: 16px\">You've got a contract renewal date coming up<br>\n</span><br>\n- **Partner name:** @{items('Apply_to_each')?['par_name']}<br>\n- **Contract end date:** @{items('Apply_to_each')?['par_contractenddate']}<br>\n- **Contract start date:** @{items('Apply_to_each')?['par_contractstartdate']}</p>"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "01419fee-cc5f-4b8d-bba4-248163a69ba4"
+          },
+          "type": "Foreach"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

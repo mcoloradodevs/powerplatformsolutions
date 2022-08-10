@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{01f5f6b2-c218-ed11-b83e-000d3a1f3b3c}" name="Partner Relationship Manager SR" isinherited="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvAppendpar_Partner" level="Basic" />
+    <RolePrivilege name="prvAppendToContact" level="Basic" />
+    <RolePrivilege name="prvAppendToflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvAssignflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvCreateContact" level="Basic" />
+    <RolePrivilege name="prvCreateflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvCreatepar_Partner" level="Basic" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeleteflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvReadContact" level="Basic" />
+    <RolePrivilege name="prvReadflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvReadpar_Partner" level="Basic" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvShareflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvWriteContact" level="Basic" />
+    <RolePrivilege name="prvWriteflowmachinegroup" level="Basic" />
+    <RolePrivilege name="prvWritepar_Partner" level="Basic" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

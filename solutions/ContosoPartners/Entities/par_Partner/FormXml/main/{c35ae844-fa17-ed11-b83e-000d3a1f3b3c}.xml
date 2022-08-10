@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c35ae844-fa17-ed11-b83e-000d3a1f3b3c}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{2c97520c-6417-4426-8133-473a5db429b2}" IsUserDefined="1" labelid="{68ef5169-b4f2-4f32-afde-d3b8728e953f}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{5b607543-af62-4656-9c55-cd2d8051f273}" labelid="{620f29b7-fc94-41e8-a15d-d09e27a07dce}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a4f0eade-ec39-46e5-8b31-ae96fc79f5c7}" labelid="{991e13ed-e498-415b-b3d4-df2f9b6df935}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="par_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="par_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{45d6f3d5-849c-488c-b20e-c46154c8418b}" locklevel="0" colspan="1" rowspan="1" labelid="{a17316c8-74f3-460f-aa34-434abe3737d8}">
+                        <labels>
+                          <label description="Partner Number" languagecode="1033" />
+                        </labels>
+                        <control id="par_partnernumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="par_partnernumber" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{580edbd6-ed6e-431b-8f00-7089767e9b21}" locklevel="0" colspan="1" rowspan="1" labelid="{f8fd1ba5-a665-43a5-a3b4-c72845238e24}">
+                        <labels>
+                          <label description="Main Phone" languagecode="1033" />
+                        </labels>
+                        <control id="par_mainphone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="par_mainphone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ec814892-523a-4665-ac56-9bfdd97583c0}" locklevel="0" colspan="1" rowspan="1" labelid="{c46753ee-2698-497b-85ae-e930c8b64afd}">
+                        <labels>
+                          <label description="Microsoft Partner" languagecode="1033" />
+                        </labels>
+                        <control id="par_microsoftpartner" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="par_microsoftpartner" disabled="false" uniqueid="{30b14a41-6071-4683-b9ed-e3e45f5801a1}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e629019f-cb58-442f-9302-fb331f061e57}" locklevel="0" colspan="1" rowspan="1" labelid="{a20e3691-d4d7-4bd3-8b8c-bc362d89648d}">
+                        <labels>
+                          <label description="D365 Partner" languagecode="1033" />
+                        </labels>
+                        <control id="par_d365partner" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="par_d365partner" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0603ce4e-8197-42b7-b48f-3504a5d72cd5}" locklevel="0" colspan="1" rowspan="1" labelid="{5bc2f686-d163-49ba-ae16-107d485af729}">
+                        <labels>
+                          <label description="Website" languagecode="1033" />
+                        </labels>
+                        <control id="par_website" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="par_website" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4bff837b-a4d1-4f2d-a85c-ccb5c8450292}" locklevel="0" colspan="1" rowspan="1" labelid="{83333ffc-e5d5-4d1a-aae8-d073c29f9be6}">
+                        <labels>
+                          <label description="Partner Rating" languagecode="1033" />
+                        </labels>
+                        <control id="par_partnerrating" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="par_partnerrating" disabled="false" uniqueid="{9b2cd70d-8ccc-4cff-8f79-03a59e7a73c5}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{79187d4a-21d0-4ff1-a7ce-e094a760c2e0}" locklevel="0" colspan="1" rowspan="1" labelid="{7e791baf-5993-424d-b9a2-8d32b994772a}">
+                        <labels>
+                          <label description="Industry" languagecode="1033" />
+                        </labels>
+                        <control id="par_industry" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="par_industry" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="ade62790-3a24-4d5b-a74f-0e2f127e9c7e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Related contacts" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{15409478-9173-4e55-9e23-a691198facef}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="New SG control 1660065354630" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>contact</TargetEntityType>
+                            <ViewId>{00000000-0000-0000-00AA-000010001004}</ViewId>
+                            <ViewIds>{00000000-0000-0000-00AA-000010001003},{00000000-0000-0000-00AA-000010001004}</ViewIds>
+                            <RelationshipName>par_contact_Partner_par_partner</RelationshipName>
+                            <VisualizationId>{E365462F-1DB9-46A8-928D-BEAB1A7A2375}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_4" id="2e0d6e44-65dd-449e-8be0-23605e4b32b2" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="111" labelwidth="115">
+                  <labels>
+                    <label description="Contract Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{401fde07-38b3-4f5e-841b-abf76b627497}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="par_contractstartdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="par_contractstartdate" disabled="false" />
+                      </cell>
+                      <cell id="{e96f4640-0173-47c1-963e-8d6ec1077d3e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract End Date" languagecode="1033" />
+                        </labels>
+                        <control id="par_contractenddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="par_contractenddate" disabled="false" />
+                      </cell>
+                      <cell id="{97ff8576-f6cc-45cb-9490-93bc7f9a05ac}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract Renewal Date" languagecode="1033" />
+                        </labels>
+                        <control id="par_contractrenewaldate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="par_contractrenewaldate" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{9f136a68-b8ff-4484-9941-c051b433e4f1}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{e72625dc-5cd6-4609-92d9-cd267df6b6f8}" showlabel="false" labelid="{f5b29d9b-ae8e-42d6-ba49-8581082de4cf}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6dd56b5d-c931-49ee-97c7-8f033ff4360a}" showlabel="false" labelid="{47d4ec37-ab64-4e54-940a-83249a4fb320}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4c97b61d-41f2-410f-83bc-290fc3761414}" showlabel="false" labelid="{523add12-2442-41ab-8a31-0bf607f49575}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{509de224-63d9-4e6c-9dd7-6adb848a3e48}" colspan="1" rowspan="1" labelid="{88f7d313-d15e-4f93-aa6c-d1d046c149ae}">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{6f4f039b-40e8-4db8-8901-6decea62f788}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{ab3d5ccc-3382-432b-8eb7-2ee15c8759ec}" showlabel="false" labelid="{42ddcef2-ccce-42f4-853a-b6c08700559b}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3d6bafec-51ee-42aa-9d33-9eff91420705}" showlabel="false" labelid="{efc6c6c2-32fe-405a-b04c-50fd42ce74ed}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{72949149-4e54-4d95-a9ff-967833a87ae4}" showlabel="false" labelid="{16236130-bba0-4cc9-9a1f-4dedfd8be34d}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{504d261d-688d-4cbd-bd93-2fbc3a71c547}" />
+        <Role Id="{490e74ce-d697-432e-ae38-4034c3175853}" />
+        <Role Id="{424aa0aa-10a6-4665-8fd5-a01317935135}" />
+        <Role Id="{62ec38d1-0f45-4f63-8c28-fdab773c67fc}" />
+      </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{9b2cd70d-8ccc-4cff-8f79-03a59e7a73c5}">
+          <customControl id="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}">
+            <parameters>
+              <datafieldname>par_partnerrating</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Rating.StarRatingControl">
+            <parameters>
+              <value type="Whole.None">par_partnerrating</value>
+              <max type="Enum" static="true">5</max>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Rating.StarRatingControl">
+            <parameters>
+              <value type="Whole.None">par_partnerrating</value>
+              <max type="Enum" static="true">5</max>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Rating.StarRatingControl">
+            <parameters>
+              <value type="Whole.None">par_partnerrating</value>
+              <max type="Enum" static="true">5</max>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{30b14a41-6071-4683-b9ed-e3e45f5801a1}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>par_microsoftpartner</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">par_microsoftpartner</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">par_microsoftpartner</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">par_microsoftpartner</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="New Partner Form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Form used to register a new partner" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
