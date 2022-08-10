@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{12146902-2f0c-42f1-98f7-3f73c711608b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{70636183-b1dd-41e5-acb8-cba9f90060ac}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{745fbe8f-a7d1-4fe8-92d9-404404a1934b}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cef632b3-a4df-4168-964c-7ea83d676d04}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="msus_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="msus_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8ec976f8-65b1-411d-8a73-4f3f5d10fcb4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Zone" languagecode="1033" />
+                        </labels>
+                        <control id="msus_zone" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="msus_zone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a588cc9-7c44-4e3e-b335-1e569261b984}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Neighborhood" languagecode="1033" />
+                        </labels>
+                        <control id="msus_neighborhood" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="msus_neighborhood" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b806d831-e568-4374-9948-beb9377b3886}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="msus_address" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="msus_address" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ea354b6-2e42-498a-be7d-633489631a0d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Latitude" languagecode="1033" />
+                        </labels>
+                        <control id="msus_latitude" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="msus_latitude" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bb1b213-3700-4929-9a18-3509c94ff7ab}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Longitude" languagecode="1033" />
+                        </labels>
+                        <control id="msus_longitude" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="msus_longitude" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="{461beea9-7001-424a-7723-c810c53833d7}" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{19a24a47-dbc7-8081-6e5a-555db50187b6}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{317c5598-aad0-8aba-4679-5cec08a07385}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="tab_2_section_2" showlabel="false" showbar="false" locklevel="0" id="{c79ae8c0-eb98-8c21-83ed-94cd2396c6ec}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{291840c8-b251-22c7-de55-65d785cca51a}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="tab_2_section_3" showlabel="false" showbar="false" locklevel="0" id="{8be343db-76c6-5d26-b321-3856692817ed}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b77732a0-edd3-8b15-4abe-0295ce99bc90}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{b2c20f6d-168a-4451-9ab3-fd4f6080692f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{fbb0f247-ca21-47cd-a81d-358e1e6b1e5d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{61169ad8-87c2-4c62-a160-da33e2058c0a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{18fc5d4b-f49e-4b4a-b70e-694673773392}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{76b8466d-b419-46fd-b63a-c5f446215a82}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{aa089ca1-55e9-4894-991e-02b4ea96b2b2}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a24aad34-9b4e-4b6c-ba96-2fbd86dcbfcc}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{29fb45e5-5f1e-41ea-a17d-b0be0adae847}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

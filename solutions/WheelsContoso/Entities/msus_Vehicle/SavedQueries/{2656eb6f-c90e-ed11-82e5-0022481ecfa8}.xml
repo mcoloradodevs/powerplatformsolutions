@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{2656eb6f-c90e-ed11-82e5-0022481ecfa8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msus_name" select="1" icon="1" preview="1">
+        <row name="result" id="msus_vehicleid">
+          <cell name="msus_name" width="200" />
+          <cell name="msus_icon" width="100" />
+          <cell name="msus_driversname" width="100" />
+          <cell name="msus_licenseplate" width="100" />
+          <cell name="msus_model" width="100" />
+          <cell name="msus_color" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="msus_vehicle">
+          <attribute name="msus_name" />
+          <attribute name="msus_vehicleid" />
+          <attribute name="msus_icon" />
+          <attribute name="msus_driversname" />
+          <attribute name="msus_licenseplate" />
+          <attribute name="msus_model" />
+          <attribute name="msus_color" />
+          <filter type="and">
+            <condition attribute="ownerid" operator="eq-userid" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Vehicles" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

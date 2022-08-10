@@ -1,0 +1,136 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "msus_sharedgoogle20maps20places20api5f6d64ac8c8909a48731c4df48d8375ad_43f7a"
+        },
+        "api": {
+          "name": "shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0",
+          "logicalName": "msus_google-20maps-20places-20api"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "6d703883-591a-4d77-be5d-31aef5dee9f2"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "address",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "The input field for the address or a place name",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "findPlaceFromText": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "03e268fe-598a-4b82-b24b-84cac287cb76"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0",
+              "operationId": "findPlaceFromText",
+              "apiId": ""
+            },
+            "parameters": {
+              "input": "@triggerBody()['text']",
+              "inputtype": "textquery",
+              "fields": [
+                "formatted_address",
+                "name",
+                "geometry/location"
+              ],
+              "locationbias": "circle:100000@4.674199080153365,-74.04831248465577",
+              "language": "es"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Response": {
+          "runAfter": {
+            "findPlaceFromText": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7c5acc5b-af03-4b32-8a24-30948728fc6e"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": "@outputs('findPlaceFromText')?['body/candidates']",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "formatted_address": {
+                    "type": "string"
+                  },
+                  "geometry": {
+                    "type": "object",
+                    "properties": {
+                      "location": {
+                        "type": "object",
+                        "properties": {
+                          "lat": {
+                            "type": "number"
+                          },
+                          "lng": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "formatted_address",
+                  "geometry",
+                  "name"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

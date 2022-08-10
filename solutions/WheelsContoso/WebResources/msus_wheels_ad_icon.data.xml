@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{5255055d-fb0d-ed11-82e5-0022481ecfa8}</WebResourceId>
+  <Name>msus_wheels_ad_icon</Name>
+  <DisplayName>wheels ad icon</DisplayName>
+  <Description>Wheels ad icon image</Description>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/msus_wheels_ad_icon5255055D-FB0D-ED11-82E5-0022481ECFA8</FileName>
+</WebResource>

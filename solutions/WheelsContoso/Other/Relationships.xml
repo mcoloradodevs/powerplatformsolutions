@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_msus_seatbooking" />
+  <EntityRelationship Name="business_unit_msus_vehicle" />
+  <EntityRelationship Name="lk_msus_pickuppoint_createdby" />
+  <EntityRelationship Name="lk_msus_pickuppoint_modifiedby" />
+  <EntityRelationship Name="lk_msus_seatbooking_createdby" />
+  <EntityRelationship Name="lk_msus_seatbooking_modifiedby" />
+  <EntityRelationship Name="lk_msus_vehicle_createdby" />
+  <EntityRelationship Name="lk_msus_vehicle_modifiedby" />
+  <EntityRelationship Name="lk_msus_wheelsad_createdby" />
+  <EntityRelationship Name="lk_msus_wheelsad_modifiedby" />
+  <EntityRelationship Name="msus_Seatbooking_msus_WheelsAd_msus_Wheel" />
+  <EntityRelationship Name="msus_Vehicle_msus_Vehicle_msus_WheelsAd" />
+  <EntityRelationship Name="msus_wheelsad_Pickuppoint_" />
+  <EntityRelationship Name="organization_msus_pickuppoint" />
+  <EntityRelationship Name="organization_msus_wheelsad" />
+  <EntityRelationship Name="owner_msus_seatbooking" />
+  <EntityRelationship Name="owner_msus_vehicle" />
+  <EntityRelationship Name="team_msus_seatbooking" />
+  <EntityRelationship Name="team_msus_vehicle" />
+  <EntityRelationship Name="user_msus_seatbooking" />
+  <EntityRelationship Name="user_msus_vehicle" />
+</EntityRelationships>

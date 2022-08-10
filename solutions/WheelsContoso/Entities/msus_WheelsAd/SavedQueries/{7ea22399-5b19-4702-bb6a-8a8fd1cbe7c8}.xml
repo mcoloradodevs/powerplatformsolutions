@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7ea22399-5b19-4702-bb6a-8a8fd1cbe7c8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msus_adid" select="1" icon="1" preview="1">
+        <row name="result" id="msus_wheelsadid">
+          <cell name="msus_adid" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msus_wheelsad">
+          <attribute name="msus_wheelsadid" />
+          <attribute name="msus_adid" />
+          <attribute name="createdon" />
+          <order attribute="msus_adid" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="msus_adid" operator="like" value="{0}" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Wheels Ads" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

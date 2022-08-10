@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>msus_WheelsContosoadminapp</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="msus_pickuppoint" />
+    <AppModuleComponent type="1" schemaName="msus_vehicle" />
+    <AppModuleComponent type="1" schemaName="msus_wheelsad" />
+    <AppModuleComponent type="1" schemaName="msus_seatbooking" />
+    <AppModuleComponent type="62" schemaName="msus_WheelsContosoadminapp" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{3eaf78df-cf0e-ed11-82e5-0022481ecfa8}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Wheels Contoso - admin app" languagecode="1033" />
+  </LocalizedNames>
+</AppModule>

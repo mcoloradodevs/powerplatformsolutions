@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>2fe416da-e01b-4d11-ba62-10ff58a2b8ac</connectorid>
+  <description>API Specification for Google Maps Platform</description>
+  <displayname>Google Maps Places API</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>msus_google-20maps-20places-20api</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/msus_google-20maps-20places-20api_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/msus_google-20maps-20places-20api_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/msus_google-20maps-20places-20api_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/msus_google-20maps-20places-20api_iconblob.Png</iconblob>
+</Connector>

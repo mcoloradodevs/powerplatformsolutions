@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>msus_wheelscontoso_b3648</Name>
+  <AppVersion>2022-07-29T22:47:00Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22072.25.0</CreatedByClientVersion>
+  <MinClientVersion>3.22072.25.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.22072.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220729T203851Z-3.22072.25.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Wheels Contoso</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"8813afa8-40d4-4b8e-8844-7705f4f5f74a":{"id":"/providers/microsoft.powerapps/apis/shared_office365users","displayName":"Office 365 Users","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1587/1.0.1587.2924/office365users/icon.png","dataSources":["Office365Users"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","isCustomApiSolutionAware":false},"eccdf38d-64f8-4df0-9f1a-1da39da1d5d8":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["GetPlaceAddress"],"dependencies":["78e0394d-bc02-41f7-a775-5332e1d20edb"],"dependents":[],"parameterHints":{"workflowName":{"value":"f3bfa727-21fc-4922-a109-f51d3abe0c89"},"workflowEntityId":{"value":"7b13ceec-b70e-ed11-82e5-0022481ecfa8"},"78e0394d-bc02-41f7-a775-5332e1d20edb":{"value":"shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0"}},"parameterHintsV2":{"workflowName":{"value":"f3bfa727-21fc-4922-a109-f51d3abe0c89"},"workflowEntityId":{"value":"7b13ceec-b70e-ed11-82e5-0022481ecfa8"},"shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0":{"value":"78e0394d-bc02-41f7-a775-5332e1d20edb"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"],"isCustomApiSolutionAware":false},"78e0394d-bc02-41f7-a775-5332e1d20edb":{"id":"/providers/microsoft.powerapps/apis/shared_google-20maps-20places-20api-5f6d64ac8c8909a487-31c4df48d8375ad0","displayName":"Google Maps Places API","iconUri":"https://prodapiicons.cdn.powerappscdn.net/20220728t000000z7b13ed3cf454469d9a035f8ff9195844/customconnectoricon.png","dataSources":[],"dependencies":[],"dependents":["eccdf38d-64f8-4df0-9f1a-1da39da1d5d8"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","customApiLogicalName":"msus_google-20maps-20places-20api","isCustomApiSolutionAware":true},"cfdc57dc-8819-49a4-b003-aa7368570ae6":{"id":"/providers/microsoft.powerapps/apis/shared_microsoftspatialservices","displayName":"Spatial Services","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/microsoftspatialservices/icon.png","dataSources":["SpatialServices"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium","isCustomApiSolutionAware":false}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Vehicles":{"entitySetName":"msus_vehicles","logicalName":"msus_vehicle"},"Pickup Points":{"entitySetName":"msus_pickuppoints","logicalName":"msus_pickuppoint"},"Wheels Ads":{"entitySetName":"msus_wheelsads","logicalName":"msus_wheelsad"},"Seat bookings":{"entitySetName":"msus_seatbookings","logicalName":"msus_seatbooking"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"msus_google-20maps-20places-20api","componenttype":372,"componenttypeplatformname":"connector"},{"logicalname":"msus_vehicle","componenttype":1},{"logicalname":"msus_pickuppoint","componenttype":1},{"logicalname":"msus_wheelsad","componenttype":1},{"logicalname":"msus_seatbooking","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/msus_wheelscontoso_b3648_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/msus_wheelscontoso_b3648_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

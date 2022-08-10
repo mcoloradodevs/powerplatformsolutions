@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{3eaf78df-cf0e-ed11-82e5-0022481ecfa8}" name="Wheels User" isinherited="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendmsus_PickupPoint" level="Global" />
+    <RolePrivilege name="prvAppendmsus_Seatbooking" level="Global" />
+    <RolePrivilege name="prvAppendmsus_Vehicle" level="Global" />
+    <RolePrivilege name="prvAppendmsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvAppendTomsus_PickupPoint" level="Global" />
+    <RolePrivilege name="prvAppendTomsus_Seatbooking" level="Global" />
+    <RolePrivilege name="prvAppendTomsus_Vehicle" level="Global" />
+    <RolePrivilege name="prvAppendTomsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvCreatemsus_PickupPoint" level="Global" />
+    <RolePrivilege name="prvCreatemsus_Seatbooking" level="Basic" />
+    <RolePrivilege name="prvCreatemsus_Vehicle" level="Basic" />
+    <RolePrivilege name="prvCreatemsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeletemsus_PickupPoint" level="Global" />
+    <RolePrivilege name="prvDeletemsus_Seatbooking" level="Global" />
+    <RolePrivilege name="prvDeletemsus_Vehicle" level="Basic" />
+    <RolePrivilege name="prvDeletemsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvReadmsus_PickupPoint" level="Global" />
+    <RolePrivilege name="prvReadmsus_Seatbooking" level="Global" />
+    <RolePrivilege name="prvReadmsus_Vehicle" level="Global" />
+    <RolePrivilege name="prvReadmsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvWritemsus_Seatbooking" level="Global" />
+    <RolePrivilege name="prvWritemsus_Vehicle" level="Basic" />
+    <RolePrivilege name="prvWritemsus_WheelsAd" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>
